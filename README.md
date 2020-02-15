@@ -7,7 +7,7 @@ The Track daily steps project is the final capstone project. It is a mobile web 
 
 ## Live Demo
 
-[Live Demo Link]() .
+[Live Demo Link](https://track-daily-steps.herokuapp.com/) .
 
 ## Built With
 - Ruby On Rails
