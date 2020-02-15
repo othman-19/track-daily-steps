@@ -8,7 +8,10 @@ class User < ApplicationRecord
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: false, allow_blank: false
-  
+
+  has_many :goals
+  has_many :projects, through: :goals
+
   private
     def downcase_email
       self.email = email.downcase
