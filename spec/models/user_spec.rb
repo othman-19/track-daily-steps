@@ -55,4 +55,19 @@ RSpec.describe User, type: :model do
       expect(user.errors[:email]).to include('has already been taken')
     end
   end
+  context 'User associations' do
+    describe 'User Goal association' do
+      it 'has many Goals' do
+        assc = User.reflect_on_association(:goals)
+        expect(assc.macro).to eq :has_many
+      end
+    end
+
+    describe 'User Project association' do
+      it 'has many Projects' do
+        assc = User.reflect_on_association(:goals)
+        expect(assc.macro).to eq :has_many
+      end
+    end
+  end
 end
