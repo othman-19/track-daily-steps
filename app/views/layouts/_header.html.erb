@@ -1,0 +1,25 @@
+<header class="navbar navbar-light" style="background-color: #0a206b;">
+  <div class="container">
+    <%= link_to "Activity", authenticated_root_path, id: "logo" %>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to (fa_icon "home", text: "Home"), authenticated_root_path %></li>
+        <% if user_signed_in? %>
+          <li><%= link_to (fa_icon "user", text: "profile"), current_user%></li>   
+          <li><%= link_to (fa_icon "sign-out", text: 'Log out'), destroy_user_session_path, method: :delete %></li> 
+          
+        <% else %>
+          <li><%= link_to (fa_icon "sign-in", text: "Log_in"), new_user_session_path %></li> 
+          <li><%= link_to (fa_icon "sign-in", text: "Sign Up"), :unauthenticated_root %></li>
+          
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="center">
+  <% if user_signed_in? %>
+    Logged in as: <%= current_user.name %>
+  <% end %>
+</div>

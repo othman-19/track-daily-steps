@@ -10,7 +10,22 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
-</html>
+
 <body>
-  <h1> I am Layout </h1>
+<% if !user_signed_in? %>
+  <main class="welcome ">
+    <header>
+      <% if notice %> 
+        <p class="notice"><%= notice %></p>
+      <% elsif %>
+        <p class="alert"><%= alert %></p>
+      <% end %>
+      <nav class="nav">
+        <%= link_to 'Login', new_user_session_path, class: "nav__link" %>
+      </nav>
+    </header>
+    <%= yield %>
+  </main>
+<% end %>
 </body>
+</html>
