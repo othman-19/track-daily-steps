@@ -5,7 +5,6 @@
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to (fa_icon "home", text: "Home"), authenticated_root_path %></li>
         <% if user_signed_in? %>
-          <li><%= link_to (fa_icon "user", text: "profile"), current_user%></li>   
           <li><%= link_to (fa_icon "sign-out", text: 'Log out'), destroy_user_session_path, method: :delete %></li> 
           
         <% else %>
