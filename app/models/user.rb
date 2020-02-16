@@ -11,7 +11,7 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: false, allow_blank: false
 
-  has_many :goals, dependent: :destroy
+  has_many :goals
   has_many :projects, through: :goals
 
   private
