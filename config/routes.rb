@@ -8,4 +8,5 @@ Rails.application.routes.draw do
       root 'users/registrations#new', as: :unauthenticated_root
     end
   end
+  resources :users, only: %i[index]
 end
