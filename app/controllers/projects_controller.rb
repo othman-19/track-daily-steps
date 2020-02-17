@@ -2,7 +2,6 @@ class ProjectsController < ApplicationController
   before_action :set_project, only: %i[show edit update destroy]
   before_action :authenticate_user!, only: %i[create destroy]
   before_action :current_user, only: %i[create destroy]
-  before_action :authorized?, only: %i[update destroy]
 
   def new 
     @project = Project.new
@@ -54,8 +53,5 @@ class ProjectsController < ApplicationController
     end
     def set_project
       @project = Project.find(params[:id])
-    end
-    def authorized?
-      redirect_to :authenticated_root unless @project.user_id == current_user.id
     end
 end

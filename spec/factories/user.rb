@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# spec/factories/contacts.rb
 require 'faker'
 
 FactoryBot.define do

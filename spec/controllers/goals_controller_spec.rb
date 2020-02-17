@@ -16,7 +16,6 @@ RSpec.describe GoalsController, type: :controller do
 
     it 'A user cannot delete a goal created by other user' do
       new_goal.save
-      p new_goal
       sign_in user1
       expect { delete :destroy, params: { id: new_goal.id } }.to change(Goal, :count).by(0)
       # expect(flash[:notice]).to eq 'Product was successfully deleted.'
