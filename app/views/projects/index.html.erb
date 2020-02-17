@@ -1,0 +1,5 @@
+<h1> all projects <h1>
+<%= link_to current_user.name, current_user %>
+<% for project in @projects %>
+  <%= link_to project.name, project %>
+<% end %>

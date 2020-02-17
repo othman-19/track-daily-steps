@@ -1,0 +1,10 @@
+<h1> Selected project <h1>
+<%= @project.name=%><br/>
+<%= @project.description=%><br/>
+<h2> project goals </h2>
+<% for project_goal in @project.goals %>
+  <h2> goal desc: </h2> 
+  <%= project_goal.description=%><br/>
+  <h2> goal user: </h2>
+  <%= project_goal.user.name=%><br/>
+<% end %>

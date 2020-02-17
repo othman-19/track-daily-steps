@@ -1,6 +1,6 @@
 class GoalsController < ApplicationController
   def index
-    @goals = goal.all
+    @goals = Goal.all
   end
 
   def show
@@ -17,6 +17,6 @@ class GoalsController < ApplicationController
   end
   private
     def goal_params
-      params.require(:goal).permit(:description, :start, :user_id)
+      params.require(:goal).permit(:description, :start, :user_id, :project_id)
     end
 end

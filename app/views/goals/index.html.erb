@@ -2,4 +2,5 @@
 <%= link_to current_user.name, current_user %>
 <% for goal in @goals %>
   <%= goal.description =%> <br>
+  <%= link_to 'Goal', goal %>
 <% end %>
