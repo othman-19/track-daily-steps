@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :projects
+  resources :goals
   devise_for :users, controllers: { registrations: 'users/registrations'}
   as :user do
     authenticated :user do
@@ -9,6 +11,4 @@ Rails.application.routes.draw do
     end
   end
   resources :users, only: %i[index show]
-  resources :projects
-  resources :goals
 end
