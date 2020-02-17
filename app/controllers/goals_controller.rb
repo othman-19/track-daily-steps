@@ -9,7 +9,7 @@ class GoalsController < ApplicationController
   end
 
   def index
-    @goals = Goal.all
+    @user_goals = Goal.where(user_id: current_user.id)
   end
 
   def show;end

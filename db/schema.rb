@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_17_103202) do
+ActiveRecord::Schema.define(version: 2020_02_17_183733) do
 
   create_table "goals", force: :cascade do |t|
     t.text "description"
-    t.date "start"
+    t.datetime "start"
     t.boolean "achieved"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -27,8 +27,8 @@ ActiveRecord::Schema.define(version: 2020_02_17_103202) do
   create_table "projects", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.date "start"
-    t.date "end"
+    t.datetime "start"
+    t.datetime "end"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

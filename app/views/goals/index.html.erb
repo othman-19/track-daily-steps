@@ -1,6 +1,8 @@
-<h1> all goals <h1>
+<h1> user goals <h1>
 <%= link_to current_user.name, current_user %>
-<% for goal in @goals %>
+<% for goal in @user_goals %>
   <%= goal.description =%> <br>
+  <%= goal.start =%> <br>
   <%= link_to 'Goal', goal %>
 <% end %>
+
