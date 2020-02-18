@@ -3,8 +3,11 @@
 <% for goal in @user_goals %>
   <%= goal.description =%> <br>
   <%= goal.start =%> <br>
-  <%= goal.start_time =%> <br>
-  <%= goal.performance =%> <br
+  <%= goal.end =%> <br>
+  <%= goal.startTime =%> <br>
+  <%= goal.workingTime =%> <br>
+  <%= goal.duration =%> <br>
+  <%= goal.performance =%> <br>
   <%= link_to 'Goal', goal %>
 <% end %>
 

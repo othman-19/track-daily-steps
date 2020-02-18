@@ -1,5 +1,6 @@
-<h1> all projects <h1>
+<h1> user name <h1>
 <%= link_to current_user.name, current_user %>
-<% for project in @projects %>
-  <%= link_to project.name, project %>
+<h1> user projects <h1>
+<% for project in current_user.projects %>
+  <%= link_to project.name, project %> </br>
 <% end %>

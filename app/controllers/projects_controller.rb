@@ -11,7 +11,9 @@ class ProjectsController < ApplicationController
     @projects = Project.all
   end
 
-  def show;end
+  def show
+    @project_user_goals = @project.goals.where(user_id: current_user.id)
+  end
 
   def create
     @project = Projects.build!(project_params)
