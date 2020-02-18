@@ -1,7 +1,6 @@
 class GoalsController < ApplicationController
   before_action :set_goal, only: %i[show edit update destroy]
   before_action :authenticate_user!, only: %i[create destroy]
-  before_action :current_user, only: %i[create destroy]
   before_action :authorized?, only: %i[update destroy]
 
   def new 
@@ -10,6 +9,7 @@ class GoalsController < ApplicationController
 
   def index
     @user_goals = Goal.where(user_id: current_user.id)
+    render json: @user_goals
   end
 
   def show;end

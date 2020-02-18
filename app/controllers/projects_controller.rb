@@ -1,7 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: %i[show edit update destroy]
   before_action :authenticate_user!, only: %i[create destroy]
-  before_action :current_user, only: %i[create destroy]
 
   def new 
     @project = Project.new
@@ -9,10 +8,12 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = Project.all
+    render json: @projects
   end
 
   def show
     @project_user_goals = @project.goals.where(user_id: current_user.id)
+    render json: @project_user_goals
   end
 
   def create
