@@ -19,8 +19,8 @@ end
   end_date = Faker::Time.between(from: DateTime.now - 1, to: "2021-01-03 00:00:00")
   Project.create!(name: name,
                   description: description,
-                  start: start_date,
-                  end: end_date)
+                  start: start_date.to_time,
+                  end: end_date.to_time)
 end
   
 
@@ -31,7 +31,7 @@ id = Project.find(1).id
   description = Faker::Lorem.sentence(5)
   start = Faker::Time.between(from: DateTime.now - 1, to: DateTime.now)
   users.each { |user| user.goals.create!(description: description,
-                                         start:start.to_datetime,
+                                         start:start.to_time,
                                          project_id:Project.find(id).id ) }
   id += 1
 end

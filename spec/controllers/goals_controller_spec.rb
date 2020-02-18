@@ -7,14 +7,15 @@ RSpec.describe GoalsController, type: :controller do
     let(:creator) { User.create(name: 'creator', email: 'creaor@gmail.com', password: 'password') }
     let(:project1) {Project.create(name: 'React',
                                   description: 'Neque porro quisquam est qui dolorem ipsum',
-                                  start: 2020-02-17,
-                                  end: 2021-02-17
+                                  start: '2020-02-17 15:43:20 +0200',
+                                  end: '2021-02-17 15:43:20 +0200'
                                   )}
     let(:new_goal) { creator.goals.create!(description: 'Neque porro quisquam est qui dolorem ipsum',
-                                          start: 2020-02-17,
+                                          start: '2020-02-17 15:43:20 +0200',
                                           project_id:project1.id)}
 
     it 'A user cannot delete a goal created by other user' do
+      project1.save
       new_goal.save
       sign_in user1
       expect { delete :destroy, params: { id: new_goal.id } }.to change(Goal, :count).by(0)
