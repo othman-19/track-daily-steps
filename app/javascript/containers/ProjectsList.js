@@ -7,7 +7,7 @@ import Project from '../components/Project';
 class ProjectsList extends Component {
   componentDidMount() {
     console.log('Iam Projects , I am mounted')
-    fetch('/projects')
+    fetch('/api/projects')
       .then(res => res.json())
       .then(data => this.props.getProjects(data));
   }

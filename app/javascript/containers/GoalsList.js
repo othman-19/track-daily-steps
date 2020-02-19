@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios'
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getGoals } from '../actions/index';
@@ -6,7 +7,8 @@ import Goal from '../components/Goal';
 
 class GoalsList extends Component {
   componentDidMount() {
-    fetch('/goals')
+    
+    fetch('/api/goals')
       .then(res => res.json())
       .then(data => this.props.getGoals(data));
   }
