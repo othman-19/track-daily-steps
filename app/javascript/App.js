@@ -11,6 +11,7 @@ class App extends Component {
     return (
       <div>
         <GoalsList />
+        <ProjectsList />
       </div>
     );
   }

@@ -6,14 +6,13 @@ import Goal from '../components/Goal';
 
 class GoalsList extends Component {
   componentDidMount() {
-    // fetch('/goals')
-    //   .then(res => res.json())
-    //   .then(data => this.props.getGoals(data));
+    fetch('/goals')
+      .then(res => res.json())
+      .then(data => this.props.getGoals(data));
   }
   
   render() {
-    console.log('Iam goals list')
-    const goals = (this.props.goals) ? this.props.goals.map(goal => <Goal goal={goal} key={goal.id} />) : <p>Goals loading</p>;
+    const goals = (this.props.goals) ? this.props.goals.map(goal => <Goal key={goal.id} goal={goal}  />) : <p>Goals loading</p>;
     return (
       <div>
         {goals}

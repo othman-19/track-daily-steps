@@ -9,7 +9,9 @@ class GoalsController < ApplicationController
 
   def index
     @user_goals = Goal.where(user_id: current_user.id)
-    render json: @user_goals
+    respond_to do |format|
+      format.json {render json: @user_goals}
+    end
   end
 
   def show;end

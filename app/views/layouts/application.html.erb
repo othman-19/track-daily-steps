@@ -6,17 +6,25 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'Index' %>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <%= javascript_pack_tag 'Index' %> 
   </head>
   <body>
-  <body>
-    <%= render 'layouts/header' %> 
-    <div class="container">
-      <%= render 'layouts/messages' %>
-      <%= yield =%>
-      <%= render 'layouts/footer' %>
-    </div>
+  <%= render 'layouts/header' %> 
+    <% if !user_signed_in? %>
+      <main class="welcome ">
+        <header>
+        <%= render 'layouts/messages' %>
+          <nav class="nav">
+            <%= link_to 'Login', new_user_session_path, class: "nav__link" %>
+          </nav>
+        </header>
+      </main>
+    <% else %>
+      <div class="container">
+        <%= render 'layouts/messages' %>
+        <%= yield =%>
+      </div>
+    <% end %>
   </body>
-</body>
 </html>

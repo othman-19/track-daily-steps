@@ -7,13 +7,13 @@ class ProjectsController < ApplicationController
   end
 
   def index
-    @projects = Project.all
+    @projects = current_user.projects
     render json: @projects
   end
 
   def show
     @project_user_goals = @project.goals.where(user_id: current_user.id)
-    render json: @project_user_goals
+    render json: [@project, @project_user_goals]
   end
 
   def create

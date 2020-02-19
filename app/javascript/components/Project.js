@@ -10,4 +10,4 @@ class Project extends Component {
   }
 }
 
-export default Goal;
+export default Project;

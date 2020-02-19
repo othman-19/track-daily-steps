@@ -2,9 +2,9 @@ const GET_PROJECTS = 'GET_PROJECTS';
 const GET_USER = 'GET_USER';
 const GET_GOALS = 'GET_GOALS';
 
-const getProject = project => ({
+const getProjects = projects => ({
   type: GET_PROJECTS,
-  payload: project,
+  payload: projects,
 });
 
 const getUser = user => ({
@@ -17,4 +17,4 @@ const getGoals = goals => ({
   payload: goals,
 });
 
-export { getProject, getUser, getGoals };
+export { getProjects, getUser, getGoals };

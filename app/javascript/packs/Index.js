@@ -7,6 +7,7 @@ import App from "../App";
 
 const initialState = {
   goals: [{}],
+  projects: [{}],
   current_user: {},
 }
 console.log('Hello World from Index')
