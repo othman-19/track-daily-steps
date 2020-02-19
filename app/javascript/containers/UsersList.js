@@ -10,14 +10,14 @@ class Users extends Component {
   }
 
   componentDidMount() {
-    fetch('users')
-      .then(res => res.json())
-      .then(data => {
-        this.setState({
-          users: data[0],
-          current_user: data[1],
-        });
-      });
+    // fetch('users')
+    //   .then(res => res.json())
+    //   .then(data => {
+    //     this.setState({
+    //       users: data[0],
+    //       current_user: data[1],
+    //     });
+    //   });
   }
 
   render() {

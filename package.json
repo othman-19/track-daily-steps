@@ -5,6 +5,7 @@
     "@babel/preset-react": "^7.8.3",
     "@rails/webpacker": "4.2.2",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "preact": "^10.3.2",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -16,5 +17,10 @@
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
     "webpack-dev-server": "^3.10.3"
-  }
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:othman-19/track-daily-steps.git",
+  "author": "othmane <othman-19@hotmail.fr>",
+  "license": "MIT"
 }

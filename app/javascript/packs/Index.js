@@ -1,20 +1,20 @@
+import React from 'react'
+import ReactDOM from 'react-dom'
 import { createStore } from 'redux';
 import rootReducer from '../reducers/index';
 import { Provider } from 'react-redux';
-import App from "../components/App";
+import App from "../App";
 
 const initialState = {
   goals: [{}],
-  current_user: {}
+  current_user: {},
 }
-
+console.log('Hello World from Index')
 const store = createStore(rootReducer, initialState);
 
 document.addEventListener("DOMContentLoaded", () => {
-  render(
-    <Provider store={store}>
-      <App />
-    </Provider>,
+  ReactDOM.render(
+    <Provider store={store}><App /></Provider>,
     document.body.appendChild(document.createElement("div"))
   );
 });

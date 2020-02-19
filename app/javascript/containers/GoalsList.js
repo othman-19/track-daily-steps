@@ -6,13 +6,14 @@ import Goal from '../components/Goal';
 
 class GoalsList extends Component {
   componentDidMount() {
-    fetch('Goals')
-      .then(res => res.json())
-      .then(data => this.props.getGoals(data));
+    // fetch('/goals')
+    //   .then(res => res.json())
+    //   .then(data => this.props.getGoals(data));
   }
-
+  
   render() {
-    const goals = (this.props.goals) ? this.props.goals.map(goal => <Goal goal={gaol} key={goal.id} />) : <p>Goals loading</p>;
+    console.log('Iam goals list')
+    const goals = (this.props.goals) ? this.props.goals.map(goal => <Goal goal={goal} key={goal.id} />) : <p>Goals loading</p>;
     return (
       <div>
         {goals}
@@ -27,7 +28,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  getTalks: goals => dispatch(getGoals(goals)),
+  getGoals: goals => dispatch(getGoals(goals)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(GoalsList);

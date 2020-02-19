@@ -7,4 +7,4 @@ const projectsReducer = (state = null, action) => {
   }
 };
 
-export default goalsReducer;
+export default projectsReducer;
