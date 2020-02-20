@@ -6,14 +6,15 @@ import Project from '../components/Project';
 
 class ProjectsList extends Component {
   componentDidMount() {
-    console.log('Iam Projects , I am mounted')
+    console.log('Iam Projects , I am in mounted')
     fetch('/api/projects')
       .then(res => res.json())
       .then(data => this.props.getProjects(data));
   }
   
   render() {
-    const projects = (this.props.projects) ? this.props.projects.map(project => <Project key={project.id} project={project}  />) : <p>Projects loading</p>;
+    this.props.projects.map(project => console.log(project) )
+    const projects = (this.props.projects) ? this.props.projects.map(project => <Project key={project.id} project={project} />) : <p>Projects loading</p>;
     return (
       <div>
         {projects}

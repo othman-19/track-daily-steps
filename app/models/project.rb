@@ -5,17 +5,25 @@ class Project < ApplicationRecord
   validates :end, presence: true
   has_many :goals, dependent: :destroy
   has_many :users, through: :goals
+
+  def as_json(options={})
+    options[:methods] = [:startTime, :estimation, :performance]
+    super
+  end
   
   def startTime
     self.start.strftime('%I:%M:%S %p')
   end
-  def workingTime
-    Time.at(Time.now-self.start).utc.strftime("%H:%M:%S")
-  end
-  def duration
+  
+  def estimation
     Time.at(self.end-self.start).utc.strftime("%H:%M:%S")
   end
+
   def performance
-    ((Time.now-self.start)/(self.end-self.start)) * 100
+    if self.goals
+      (self.goals.where(achieved).count/self.goals.count) * 100
+    else
+      0
+    end
   end
 end

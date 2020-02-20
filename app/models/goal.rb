@@ -6,7 +6,7 @@ class Goal < ApplicationRecord
   belongs_to :project
 
   def as_json(options={})
-    options[:methods] = [:startTime, :workingTime]
+    options[:methods] = [:startTime, :estimation]
     super
   end
 
@@ -14,21 +14,12 @@ class Goal < ApplicationRecord
     self.start.strftime('%I:%M:%S %p')
   end
   
-  def workingTime
-    Time.at(self.start-Time.now).utc.strftime("%H:%M:%S")
-  end
-  def duration
+  def estimation
     if self.end
       Time.at(self.start-self.end).utc.strftime("%H:%M:%S")
     else
       'End time not selected'
     end
   end
-  def performance
-    if self.end
-      (self.start-Time.now)/(self.start-self.end) * 100
-    else 
-      nil
-    end
-  end
+  
 end
