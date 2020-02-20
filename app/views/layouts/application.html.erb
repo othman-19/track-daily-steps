@@ -10,13 +10,15 @@
   </head>
   <body>
   <%= render 'layouts/header' %> 
+  <% if false %>
     <% if !user_signed_in? %>
       <main class="welcome ">
         <header>
         <%= render 'layouts/messages' %>
           <nav class="nav">
             <%= link_to 'Login', new_user_session_path, class: "nav__link" %>
-          </nav>
+            <%= link_to (fa_icon "sign-in", text: "Sign Up"), new_user_registration_path %>
+            </nav>
         </header>
       </main>
     <% else %>
@@ -25,5 +27,7 @@
         <%= yield %>
       </div>
     <% end %>
+    <% end%>
+    <%= yield %>
   </body>
 </html>
