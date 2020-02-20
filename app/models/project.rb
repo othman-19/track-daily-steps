@@ -21,7 +21,7 @@ class Project < ApplicationRecord
 
   def performance
     if self.goals
-      (self.goals.where(achieved: true).count/self.goals.count) * 100
+      (self.goals.where(achieved: true).count / self.goals.count) * 100
     else
       0
     end
