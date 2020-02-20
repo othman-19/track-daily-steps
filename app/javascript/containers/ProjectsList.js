@@ -11,13 +11,18 @@ class ProjectsList extends Component {
       .then(res => res.json())
       .then(data => this.props.getProjects(data));
   }
-  
   render() {
-    this.props.projects.map(project => console.log(project) )
-    const projects = (this.props.projects) ? this.props.projects.map(project => <Project key={project.id} project={project} />) : <p>Projects loading</p>;
+    let { projects } = this.props;
+    projects.map(project => console.log(project) ) 
+    if (projects) {
+      projects =  projects.map(project => <Project key={project.id} project={project} />)
+    }
+    else {
+      projects = <div> projects loading... </div>
+    }
     return (
       <div>
-        {projects}
+        { projects }
       </div>
     );
   }

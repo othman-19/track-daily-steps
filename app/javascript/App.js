@@ -3,8 +3,6 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import GoalsList from './containers/GoalsList';
 import ProjectsList from './containers/ProjectsList';
-import UsersList from './containers/UsersList';
-import goalsReducer from './reducers/goalsReducer';
 import Navbar from './components/Navbar'
 class App extends Component {
   render() {
