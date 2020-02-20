@@ -5,17 +5,18 @@ import GoalsList from './containers/GoalsList';
 import ProjectsList from './containers/ProjectsList';
 import UsersList from './containers/UsersList';
 import goalsReducer from './reducers/goalsReducer';
-
+import Navbar from './components/Navbar'
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
         <div className='App'>
-        <Switch>
+          <Navbar />
+          <Switch>
             <Route exact path='/' component={ GoalsList } />
             <Route exact path='/goals' component={ GoalsList } />
             <Route exact path='/projects' component={ ProjectsList } />
-        </Switch>
+          </Switch>
         </div>
       </BrowserRouter>
     );
