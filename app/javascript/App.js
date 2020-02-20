@@ -6,28 +6,17 @@ import ProjectsList from './containers/ProjectsList';
 import UsersList from './containers/UsersList';
 import goalsReducer from './reducers/goalsReducer';
 
-
-// class App extends Component {
-//   render() {
-//     return (
-//       <div className='App'>
-//         <GoalsList />
-//         <ProjectsList />
-//       </div>
-//     );
-//   }
-// }
-
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
+        <div className='App'>
         <Switch>
-          <div className="">
             <Route exact path='/' component={ GoalsList } />
+            <Route exact path='/goals' component={ GoalsList } />
             <Route exact path='/projects' component={ ProjectsList } />
-          </div>
         </Switch>
+        </div>
       </BrowserRouter>
     );
   }

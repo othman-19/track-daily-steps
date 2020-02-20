@@ -6,8 +6,8 @@ import { Provider } from 'react-redux';
 import App from "../App";
 
 const initialState = {
-  goals: [{}],
-  projects: [{}],
+  goals: [{id:0, description:'initial goal'}],
+  projects: [{id:0, name:'project_name'}],
   current_user: {},
 }
 console.log('Hello World from Index')
