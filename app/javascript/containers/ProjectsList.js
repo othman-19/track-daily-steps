@@ -9,7 +9,6 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 class ProjectsList extends Component {
   componentDidMount() {
-    console.log('Iam Projects , I am in mounted')
     fetch('/api/projects')
       .then(res => res.json())
       .then(data => this.props.getProjects(data));

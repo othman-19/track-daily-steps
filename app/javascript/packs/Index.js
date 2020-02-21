@@ -9,6 +9,7 @@ const initialState = {
   goals: [{id:0, description:'initial goal'}],
   projects: [{id:0, name:'project_name'}],
   current_user: {},
+  projectGoals: [{id:0, description:'initial goal'}]
 }
 console.log('Hello World from Index')
 const store = createStore(rootReducer, initialState);
