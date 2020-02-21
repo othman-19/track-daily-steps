@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import GoalsList from './containers/GoalsList';
 import ProjectsList from './containers/ProjectsList';
+import ProjectGoals from './containers/ProjectGoals'
 import Navbar from './components/Navbar'
 class App extends Component {
   render() {
@@ -12,8 +13,8 @@ class App extends Component {
           <Navbar />
           <Switch>
             <Route exact path='/' component={ GoalsList } />
-            <Route exact path='/goals' component={ GoalsList } />
-            <Route exact path='/projects' component={ ProjectsList } />
+            <Route path='/goals' component={ GoalsList } />
+            <Route path='/projects' component={ ProjectsList } />
           </Switch>
         </div>
       </BrowserRouter>

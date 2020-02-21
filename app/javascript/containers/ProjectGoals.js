@@ -6,22 +6,22 @@ import Project from '../components/Project';
 import Goal from '../components/Goal';
 
 class ProjectGoals extends Component {
-  constructor () {
+  constructor (props) {
     super(props)
     this.state = {
+      id : props.match.params.id,
       project: {},
-      projectGoals: {}
+      projectGoals: []
     }
   }
-  
   componentDidMount() {
-    console.log('Iam ProjectGoals , I will mounte')
-    id = this.props.id
+    const id = this.state.id;
     fetch(`/api/projects/${id}`)
     .then(res => res.json())
     .then(data => this.setState({
+      id: id,
       project: data[0],
-      projectGoals: data[1]
+      projectGoals: [...data[1]]
     }));
   }
   render() {

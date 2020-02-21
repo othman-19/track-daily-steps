@@ -3,6 +3,9 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getProjects } from '../actions/index';
 import Project from '../components/Project';
+import ProjectGoals from './ProjectGoals';
+import { Link, NavLink, withRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 class ProjectsList extends Component {
   componentDidMount() {
@@ -13,7 +16,6 @@ class ProjectsList extends Component {
   }
   render() {
     let { projects } = this.props;
-    projects.map(project => console.log(project) ) 
     if (projects) {
       projects =  projects.map(project => <Project key={project.id} project={project} />)
     }
@@ -23,6 +25,7 @@ class ProjectsList extends Component {
     return (
       <div>
         { projects }
+        <Route path="/projects/:id" component={ProjectGoals}/>
       </div>
     );
   }

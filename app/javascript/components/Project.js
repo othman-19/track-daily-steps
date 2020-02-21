@@ -1,5 +1,7 @@
 import React ,{ component }from 'react';
 import PropTypes from 'prop-types';
+import { Link, NavLink, withRouter } from 'react-router-dom';
+
 
 const ProjectPerformance = (startTime, endTime) => {
   const start = new Date(startTime).getTime()
@@ -10,11 +12,11 @@ const ProjectPerformance = (startTime, endTime) => {
   return time
 }
 
-function Project({ project: { name, description, start, end, startTime, estimation } }) {
+function Project({ project: { id ,name, description, start, end, startTime, estimation } }) {
   return (
     <div className = 'Project'>
       <ul>
-        <li>name: { name }</li>
+        <Link to={`/projects/${id}`} key={id}><li>name: { name }</li></Link>
         <li>description: { description }</li>
         <li>Started: { new Date(start).toDateString() }</li>
         <li>Start time: { startTime }</li>
@@ -27,4 +29,4 @@ function Project({ project: { name, description, start, end, startTime, estimati
   );
 }
 
-export default Project;
+export default withRouter(Project);
