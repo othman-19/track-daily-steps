@@ -9,13 +9,13 @@ class ProjectGoals extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      id : props.match.params.id,
+      id : null,
       project: {},
       projectGoals: []
     }
   }
   componentDidMount() {
-    const id = this.state.id;
+    const id = this.props.match.params.id;
     fetch(`/api/projects/${id}`)
     .then(res => res.json())
     .then(data => this.setState({
@@ -23,6 +23,18 @@ class ProjectGoals extends Component {
       project: data[0],
       projectGoals: [...data[1]]
     }));
+  }
+  componentDidUpdate(prevProps) {
+    if (prevProps.match.params.id !== this.props.match.params.id) {
+      const id = this.props.match.params.id
+      fetch(`/api/projects/${id}`)
+        .then(res => res.json())
+        .then(data => this.setState({
+          id: id,
+          project: data[0],
+          projectGoals: [...data[1]]
+    }));
+    }
   }
   render() {
     let { projectGoals } = this.state
@@ -36,14 +48,4 @@ class ProjectGoals extends Component {
   }
 }
 
-// const mapStateToProps = state => ({
-//   projects: state.projects,
-//   current_user: state.current_user,
-// });
-
-// const mapDispatchToProps = dispatch => ({
-//   getProjects: projects => dispatch(getProjects(projects)),
-// });
-
-// export default connect(mapStateToProps, mapDispatchToProps)(ProjectsList);
 export default ProjectGoals;
