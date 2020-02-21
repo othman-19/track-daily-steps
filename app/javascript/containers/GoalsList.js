@@ -8,7 +8,6 @@ class GoalsList extends Component {
   componentDidMount() {
     fetch('/api/goals')
       .then(res => res.json())
-      // .then(data => console.log(data))
       .then(data => this.props.getGoals(data));
   }
   

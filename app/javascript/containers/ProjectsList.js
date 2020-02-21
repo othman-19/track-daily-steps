@@ -24,7 +24,7 @@ class ProjectsList extends Component {
     return (
       <div>
         { projects }
-        <Route path="/projects/:id" component={ProjectGoals}/>
+        <Route key={Math.random()} path="/projects/:id" component={ProjectGoals}/>
       </div>
     );
   }

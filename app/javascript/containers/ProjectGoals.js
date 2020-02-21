@@ -12,19 +12,11 @@ class ProjectGoals extends Component {
     .then(res => res.json())
     .then(data => this.props.getProjectGoals(data[1]));
   }
-  componentDidUpdate(prevProps) {
-    if (prevProps.match.params.id !== this.props.match.params.id) {
-      const id = this.props.match.params.id
-      fetch(`/api/projects/${id}`)
-        .then(res => res.json())
-        .then(data => this.props.getProjectGoals(data[1]));
-    }
-  }
   render() {
     let { projectGoals } = this.props
     projectGoals = projectGoals.map(goal => <Goal key={goal.id} goal={goal} />)
     return (
-      <div>
+      < div >
         { projectGoals }
       </div>
     );
