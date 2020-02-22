@@ -21,10 +21,8 @@ module API
       @goal = current_user.goals.build(goal_params)
       respond_to do |format|
         if @goal.save
-          format.html { redirect_to authenticated_root_path, notice: 'goal was successfully created.' }
-          format.json { render :show, status: :created, location: @goal }
+          format.json { render json: @goal, status: :created, location: api_goal_url(@goal) }
         else
-          format.html { redirect_to current_user, alert: 'goal not created' }
           format.json { render json: @goal.errors, status: :unprocessable_entity }
         end
       end
@@ -52,7 +50,7 @@ module API
 
     private
       def goal_params
-        params.require(:goal).permit(:description, :start, :user_id, :project_id)
+        params.require(:goal).permit(:description, :start, :end, :user_id, :project_id)
       end
       def set_goal
         @goal = Goal.find(params[:id])

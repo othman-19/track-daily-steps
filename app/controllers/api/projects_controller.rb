@@ -20,7 +20,6 @@ module API
 
     def create
       @project = Project.create!(project_params)
-      #respond_with :api, @project, status: :created, location: @project
       respond_to do |format|
         if @project.save
           format.json { render json: @project, status: :created, location: api_project_url(@project) }

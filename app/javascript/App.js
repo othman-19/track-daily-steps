@@ -5,6 +5,7 @@ import GoalsList from './containers/GoalsList';
 import ProjectsList from './containers/ProjectsList';
 import ProjectGoals from './containers/ProjectGoals'
 import Navbar from './components/Navbar'
+import NewGoal from './components/NewGoal'
 import NewProject from './components/NewProject'
 class App extends Component {
   render() {
@@ -17,6 +18,8 @@ class App extends Component {
             <Route path='/goals' component={ GoalsList } />
             <Route path='/projects' component={ ProjectsList } />
             <Route exact path='/newProject' component={ NewProject } />
+            <Route key={Math.random()} path={'/newGoal/:projectId'} component={NewGoal}/>
+
           </Switch>
         </div>
       </BrowserRouter>

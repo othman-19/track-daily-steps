@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   namespace :api, defaults: { format: 'json' } do
-    resources :goals, only: :index
+    resources :goals, only: [:index, :show, :create]
     resources :projects, only: [:index, :show, :create]
     resources :users
   end

@@ -13,14 +13,17 @@ class GoalsForm extends Component {
   }
 
   handleChange(e) {
-    this.setState({ [e.target.name]: e.target.value });
+    const projectId = Number(this.props.match.params.projectId);
+    this.setState({
+      project_id: projectId,
+      [e.target.name]: e.target.value,
+    });
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    const { description, start, end } = { ...this.state };
-    console.log (name, description, start, end)
-    fetch('/api/projects', {
+    const { description, start, end, project_id } = { ...this.state };
+    fetch('/api/goals', {
       method: 'POST',
       headers : {
         'Accept': 'application/json, text/plain, */*',
@@ -29,7 +32,8 @@ class GoalsForm extends Component {
       body:JSON.stringify({
         description: description,
         start: start,
-        end: end
+        end: end,
+        project_id: project_id,
       })
     }).then((res) => res.json())
       .then((data) =>  console.log(data));
@@ -37,10 +41,12 @@ class GoalsForm extends Component {
     this.setState({
      description: '',
       start: '',
-      end:''
+      end:'',
+      user_id: '',
+      projectId: '',
     });
-      this.props.history.push('/');
-    }
+    this.props.history.push('/');
+  }
   render() {
     const { description, start, end } = this.state;
     return (
@@ -80,4 +86,4 @@ class GoalsForm extends Component {
   }
 }
 
-export default ProjectsForm;
+export default GoalsForm;
