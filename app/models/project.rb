@@ -6,6 +6,8 @@ class Project < ApplicationRecord
   has_many :goals, dependent: :destroy
   has_many :users, through: :goals
 
+  default_scope -> { order(created_at: :desc) }
+
   def as_json(options={})
     options[:methods] = [:startTime, :estimation, :performance]
     super
