@@ -4,6 +4,7 @@ import { Link, NavLink, withRouter } from 'react-router-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import NewGoal from './NewGoal'
 import ProjectGoals from '../containers/ProjectGoals'
+import { estimation } from '../timeCounter';
 
 const ProjectPerformance = (startTime, endTime) => {
   const start = new Date(startTime).getTime()
@@ -14,7 +15,7 @@ const ProjectPerformance = (startTime, endTime) => {
   return time
 }
 
-function Project({ project: { id ,name, description, start, end, startTime, estimation } }) {
+function Project({ project: { id ,name, description, start, end, startTime} }) {
   return (
     <div className = 'Project'>
       <ul>
@@ -23,7 +24,7 @@ function Project({ project: { id ,name, description, start, end, startTime, esti
         <li>Started: { new Date(start).toDateString() }</li>
         <li>Start time: { startTime }</li>
         <li>Will end: { end }</li>
-        <li>Estimated time: { estimation }</li>
+        <li>Estimated time: { estimation(start, end) }</li>
         <li>Performance: { ProjectPerformance(start, end) } %</li>
         <li>Achieved: { ProjectPerformance(start, end) >= 100 ? 'Achieved!' : 'Not yet!' }</li>
         <Link to={`/newGoal/${id}`} key={Math.random()}><li>Add a new goal</li></Link>

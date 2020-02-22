@@ -18,7 +18,7 @@ class Project < ApplicationRecord
   end
   
   def estimation
-    Time.at(self.end-self.start).utc.strftime("%H:%M:%S")
+    Time.at(self.end-self.start).strftime("%H:%M:%S")
   end
 
   def performance

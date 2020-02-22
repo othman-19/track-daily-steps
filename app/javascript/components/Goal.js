@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { workedTime, GoalPerformance} from '../timeCounter'
+import { estimation, workedTime, GoalPerformance} from '../timeCounter'
     
-function Goal({ goal: { description, start, achieved, end, startTime, estimation } }) {
+function Goal({ goal: { description, start, achieved, end, startTime } }) {
   return (
     <div className = 'Goal'>
       <ul>
@@ -10,10 +10,10 @@ function Goal({ goal: { description, start, achieved, end, startTime, estimation
         <li>Started: { new Date(start).toDateString() }</li>
         <li>Start time: { startTime }</li>
         <li>Will end: { end ? end : 'Not selected'}</li>
-        <li>Estimated time: { estimation }</li>
-        <li>Worked time: { workedTime(start) }</li>
-        <li>Performance: { GoalPerformance(start, end) }</li>
-        <li>Achieved: { achieved? 'Achieved!' : 'Not yet!' }</li>
+        <li>Estimated time: { estimation(start, end) }</li>
+        <li>Worked time: { workedTime(start, end) }</li>
+        <li>Performance: { GoalPerformance(start, end) } %</li>
+        <li>Achieved: { GoalPerformance(start, end) >= 100 ? 'Achieved!' : 'Not yet!' }</li>
       </ul>
     </div>
   );
