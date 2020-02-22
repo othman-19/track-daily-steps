@@ -11,9 +11,9 @@
   # activated: true,
   # activated_at: Time.zone.now
 end
-
+Projects = ['Ruby on rails', 'Ruby', 'JavaScript', 'Webpack', 'React', 'Rspec','Redux', 'Algorithmes and Data structures', 'Professional skills', 'Career preparation' ]
 10.times do |n|
-  name = Faker::ProgrammingLanguage.name
+  name = Projects[n]
   description = Faker::Lorem.sentence(5)
   start_date = Faker::Time.between(from: DateTime.now - 1, to: DateTime.now) #=> "2014-09-18 12:30:59 -0700"
   end_date = Faker::Time.between(from: DateTime.now - 1, to: "2021-01-03 00:00:00")

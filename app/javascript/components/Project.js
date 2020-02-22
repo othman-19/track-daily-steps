@@ -1,7 +1,9 @@
 import React ,{ component }from 'react';
 import PropTypes from 'prop-types';
 import { Link, NavLink, withRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
+import ProjectGoals from '../containers/ProjectGoals'
 
 const ProjectPerformance = (startTime, endTime) => {
   const start = new Date(startTime).getTime()
@@ -25,6 +27,8 @@ function Project({ project: { id ,name, description, start, end, startTime, esti
         <li>Performance: { ProjectPerformance(start, end) } %</li>
         <li>Achieved: { ProjectPerformance(start, end) >= 100 ? 'Achieved!' : 'Not yet!' }</li>
       </ul>
+      <Route key={Math.random()} path={`/projects/:id`} component={ProjectGoals}/>
+      <Route key={Math.random()} path={`/newGoal`} component={newGoal}/>
     </div>
   );
 }

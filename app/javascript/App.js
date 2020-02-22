@@ -5,6 +5,7 @@ import GoalsList from './containers/GoalsList';
 import ProjectsList from './containers/ProjectsList';
 import ProjectGoals from './containers/ProjectGoals'
 import Navbar from './components/Navbar'
+import NewProject from './components/NewProject'
 class App extends Component {
   render() {
     return (
@@ -15,6 +16,7 @@ class App extends Component {
             <Route exact path='/' component={ GoalsList } />
             <Route path='/goals' component={ GoalsList } />
             <Route path='/projects' component={ ProjectsList } />
+            <Route exact path='/newProject' component={ NewProject } />
           </Switch>
         </div>
       </BrowserRouter>

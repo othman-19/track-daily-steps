@@ -8,8 +8,9 @@ module API
     end
 
     def index
+      @allProjects = Project.all
       @projects = current_user.projects
-      render json: @projects
+      render json: @allProjects
     end
 
     def show
@@ -18,13 +19,12 @@ module API
     end
 
     def create
-      @project = Projects.build!(project_params)
+      @project = Project.create!(project_params)
+      #respond_with :api, @project, status: :created, location: @project
       respond_to do |format|
         if @project.save
-          format.html { redirect_to authenticated_root_path, notice: 'Project was successfully created.' }
-          format.json { render :show, status: :created, location: @project }
+          format.json { render json: @project, status: :created, location: api_project_url(@project) }
         else
-          format.html { redirect_to current_user, alert: 'project not created' }
           format.json { render json: @project.errors, status: :unprocessable_entity }
         end
       end

@@ -8,7 +8,7 @@ const Navbar = (props) => {
         <ul className='right'>
           <li><NavLink to='/'>Goals</NavLink></li>
           <li><Link to='/projects'>Projects</Link></li>
-          <li><Link to='/projects'>NewProject</Link></li>
+          <li><Link to='/newProject'>NewProject</Link></li>
           <li><Link to='/about'>About</Link></li>
           <li><Link to='/contact'>Contact</Link></li>
         </ul>
