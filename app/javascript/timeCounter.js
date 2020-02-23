@@ -51,3 +51,12 @@ export const GoalPerformance = (startTime, endTime) => {
   }
   return 0
 }
+
+export const ProjectPerformance = (startTime, endTime) => {
+  const start = new Date(startTime).getTime()
+  const end = new Date(endTime).getTime()
+  const now = Date.now()
+  let time = (now-start)/(end-start)
+  time = Math.floor(time * 100)
+  return time
+}

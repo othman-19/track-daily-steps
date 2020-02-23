@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { estimation, workedTime, GoalPerformance} from '../timeCounter'
+import { GoalPerformance } from '../timeCounter'
     
 function Goal({ goal: { description, start, end, startTime } }) {
   return (
