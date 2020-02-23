@@ -2,7 +2,8 @@ import React from 'react';
 
 function About() {
   return (
-    <div className='about'>
+    <div className='about container'>
+      <h3>About Us</h3>
       <p>
         We are an IT company passionate about,
         Web Development and web Design.
@@ -11,6 +12,7 @@ function About() {
         For all inquiries contact the team at ontech@fakemail.fake
         and interact with us on Twitter and Facebook.
       </p>
+      <p class="copy-right">&copy; Othmane Namani, 20, github:othman-19</p>
     </div>
   );
 }

@@ -50,36 +50,39 @@ class GoalsForm extends Component {
   render() {
     const { description, start, end } = this.state;
     return (
-      <div className="form-listing">
-        <h3 className="add-book">Create a new Goal</h3>
+      <div>
+        <h3 className="center">Create a new Goal</h3>
         <form onSubmit={this.handleSubmit} className="books-form">
-          <textarea
-            name="description"
-            id="description"
-            value={description}
-            required
-            onChange={this.handleChange}
-            placeholder="Goal description"
-          /><br/>
-          <input
-            type="datetime-local"
-            name="start"
-            id="start"
-            value={start}
-            required
-            onChange={this.handleChange}
-            placeholder="Goal start time"
-          /><br/>
-          <input
-            type="datetime-local"
-            name="end"
-            id="end"
-            value={end}
-            required
-            onChange={this.handleChange}
-            placeholder="Goal start time"
-          /><br/>
-          <button className="Rectangle-2" type="submit">Submit</button>
+          <div class="container">
+            <h5>Goal description</h5>
+            <textarea
+              name="description"
+              id="description"
+              value={description}
+              required
+              onChange={this.handleChange}
+              placeholder="Goal description"
+            /><br/>
+            <h5>Set start date and time</h5>
+            <input
+              type="datetime-local"
+              name="start"
+              id="start"
+              value={start}
+              required
+              onChange={this.handleChange}
+            /><br/>
+            <h5>Set end date and time</h5>
+            <input
+              type="datetime-local"
+              name="end"
+              id="end"
+              value={end}
+              required
+              onChange={this.handleChange}
+            /><br/>
+            <button className="submitBtn" type="submit">Submit</button>
+          </div>
         </form>
       </div>
     );

@@ -25,6 +25,7 @@ $blue-light-2x: #ecedf1;
 body {
   font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
   background: $blue-light;
+  padding-bottom: 65px; 
 }
 
 header {
@@ -65,12 +66,8 @@ h1 {
 }
 
 h2 {
-  font-size: 1.2em;
   letter-spacing: -1px;
-  margin-bottom: 30px;
-  text-align: center;
-  font-weight: normal;
-  color: $gray-light;
+  margin-bottom: 40px;
 }
 
 p {
@@ -110,7 +107,7 @@ nav {
 }
 
 #logo {
-  margin-top: 10px;
+  margin-top: 15px;
   font-family: 'Bungee Inline', 'Times New Roman', Times, serif;
   font-size: 1.5em;
   color: $blue-dark;
@@ -167,4 +164,9 @@ i:hover {
 .project {
   background: $blue-light-2x;
   margin-bottom: 5%;
+}
+//copy-right
+
+.copy-right {
+  font-size: 0.8em;
 }

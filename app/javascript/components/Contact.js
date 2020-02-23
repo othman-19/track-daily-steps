@@ -2,7 +2,8 @@ import React from 'react';
 
 function Contact() {
   return (
-    <div className='Coantact'>
+    <div className='Contact container'>
+      <h3>Contact Us</h3>
       <p>
         For General Inquiries, please review our Frequently Asked Questions (FAQ).
       </p>
@@ -17,6 +18,7 @@ function Contact() {
       <p>
         If you would like to be contacted, send us an email to: ontech@fakemail.fake .
       </p>
+      <p class="copy-right">&copy; Othmane Namani, 20, github:othman-19</p>
     </div>
   );
 }

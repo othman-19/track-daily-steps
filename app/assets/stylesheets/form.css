@@ -1,5 +1,5 @@
 
-input[type=text], input[type=password], input[type=email] {
+input[type=text], input[type=password], input[type=email], textarea, input[type=datetime-local] {
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
@@ -47,8 +47,3 @@ hr {
 .submitBtn:hover,.signUp:hover {
   opacity:1;
 }
-
-.container {
-  padding: 5%;
-}
-

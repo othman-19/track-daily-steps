@@ -47,45 +47,49 @@ class ProjectsForm extends Component {
   render() {
     const { name, description, start, end } = this.state;
     return (
-      <div className="form-listing">
-        <h3 className="add-book">Create a new Project</h3>
+      <div className="">
+        <h3 className="center">Create a new Project</h3>
         <form onSubmit={this.handleSubmit} className="books-form">
-          <input
-            type="text"
-            name="name"
-            id="name"
-            value={name}
-            required
-            onChange={this.handleChange}
-            placeholder="Project Title"
-          /><br/>
-          <textarea
-            name="description"
-            id="description"
-            value={description}
-            required
-            onChange={this.handleChange}
-            placeholder="Project description"
-          /><br/>
-          <input
-            type="datetime-local"
-            name="start"
-            id="start"
-            value={start}
-            required
-            onChange={this.handleChange}
-            placeholder="Project description"
-          /><br/>
-          <input
-            type="datetime-local"
-            name="end"
-            id="end"
-            value={end}
-            required
-            onChange={this.handleChange}
-            placeholder="Project description"
-          /><br/>
-          <button className="Rectangle-2" type="submit">Submit</button>
+          <div class="container">
+            <h5>Set project name</h5>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              value={name}
+              required
+              onChange={this.handleChange}
+              placeholder="Project Title"
+            /><br/>
+            <h5>Set project description</h5>
+            <textarea
+              name="description"
+              id="description"
+              value={description}
+              required
+              onChange={this.handleChange}
+              placeholder="Project description"
+            /><br/>
+            <h5>Set start date and time</h5>
+            <input
+              type="datetime-local"
+              name="start"
+              id="start"
+              value={start}
+              required
+              onChange={this.handleChange}
+            /><br/>
+            <h5>Set end date and time</h5>
+            <input
+              type="datetime-local"
+              name="end"
+              id="end"
+              value={end}
+              required
+              onChange={this.handleChange}
+            /><br/>
+            <button className="submitBtn" type="submit">Submit</button>
+          </div>
         </form>
       </div>
     );
