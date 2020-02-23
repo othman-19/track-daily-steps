@@ -1,0 +1,53 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
+/* mixins, variables, etc. */
+
+$gray-medium-light: #eaeaea;
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+/* universal */
+
+body {
+  padding-top: 00;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+
+
+.center {
+  text-align: center;
+  h1 {
+    padding-bottom: 1px;
+  }
+}
+
+.logoBar {
+  background-color: #a1aac7;
+}
+
+#logo {
+  margin-top: 10px;
+  font-family: 'Bungee Inline';
+  font-size: 1.5em;
+}
+
+#user {
+  padding-bottom: 4px;
+}
+.userName {
+  margin-right: 15%;
+}

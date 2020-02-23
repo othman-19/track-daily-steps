@@ -1,19 +1,15 @@
-<header class="navbar navbar-light" style="background-color: #0a206b;">
+<header class="logoBar" >
   <div class="container">
-    <h1 id="logo" >Track Daily Progress </h1>
+    <h1 class="center" id="logo" >Track Daily Progress </h1>
     <nav>
-      <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
-          <li> Logged in as: <%= current_user.name %> </li> 
-
-          <li><%= link_to (fa_icon "sign-out", text: 'Log out'), destroy_user_session_path, method: :delete %></li> 
-          
+          <h5 id="user" class="center"> <span class="userName"><%= current_user.name %></span>  <span><%= link_to (fa_icon "sign-out", text: 'Log out'), destroy_user_session_path, method: :delete %></span>  </h5> 
+         
         <% else %>
           <li><%= link_to (fa_icon "sign-in", text: "Log_in"), new_user_session_path %></li> 
           <li><%= link_to (fa_icon "sign-in", text: "Sign Up"), new_user_registration_path %></li>
           
         <% end %>
-      </ul>
     </nav>
   </div>
 </header>
