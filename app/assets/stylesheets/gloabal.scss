@@ -31,18 +31,11 @@ header {
   margin-bottom: 5%;
 }
 
-section {
-  overflow: auto;
-}
-
 textarea {
   resize: vertical;
 }
 
 input, textarea {
-  border: 1px solid rgb(201, 194, 194);
-  width: 100%;
-  margin-bottom: 15px;
   @include box_sizing;
 }
 
