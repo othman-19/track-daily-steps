@@ -4,7 +4,10 @@
 
 /* mixins, variables, etc. */
 
-// $gray-medium-light: #eaeaea;
+$blue-grey: #a1aac7;
+$blue-dark: #1d1d2c;
+$blue-light: #e1e2e7;
+$blue-light-2x: #ecedf1;
 
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
@@ -21,6 +24,7 @@
 
 body {
   font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+  background: $blue-light;
 }
 
 header {
@@ -82,23 +86,26 @@ p {
   padding: 0 10% 0 10%;
 }
 
+// navigation bar
+
 nav {
   a{
     padding: 4% 2%;
-    color: whitesmoke;
+    color:$blue-grey;
     height: 100%;
     display: block;
     font-size: 0.9em;
   }
   a:hover {
-    background-color: rgb(90, 113, 240);
-    color: whitesmoke;
+    background-color: $blue-grey;
+    color: $blue-dark;
     text-decoration: none;
   }
+  z-index: 2;
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
-  background-color: #1d1d2c;
+  background-color: $blue-dark;
   height: 8%;
   @include fixed_bottom();
 }
@@ -106,13 +113,14 @@ nav {
 /* logo */
 
 .logoBar {
-  background-color: #a1aac7;
+  background-color: $blue-grey;
 }
 
 #logo {
   margin-top: 10px;
   font-family: 'Bungee Inline', 'Times New Roman', Times, serif;
   font-size: 1.5em;
+  color: $blue-dark;
 }
 
 #user {
@@ -121,4 +129,43 @@ nav {
 
 .userName {
   margin-right: 25%;
+  color: $blue-dark;
+}
+
+// Goal
+.goal {
+  background: $blue-light-2x;
+  margin-bottom: 5%;
+}
+
+.startTime {
+  margin-bottom: 2px;
+}
+
+.tracks {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.tracktime {
+  flex-grow: 2;
+}
+
+
+.track {
+  padding: 0;
+  margin: 2px;
+  font-size: 0.8em;
+}
+
+.fas {
+  font-size: 2em;
+}
+
+i:hover {
+  font-size: 2.5em;
+}
+
+.icon-green{
+  color:rgb(27, 218, 27)
 }

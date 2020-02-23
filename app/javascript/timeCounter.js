@@ -49,5 +49,5 @@ export const GoalPerformance = (startTime, endTime) => {
     }
     return time
   }
-  return 'No end time added for this goal'
+  return 0
 }
