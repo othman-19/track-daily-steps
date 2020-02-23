@@ -3,17 +3,13 @@ import { Link, NavLink, withRouter } from 'react-router-dom';
 
 const Navbar = () => {
   return(
-    <nav className='nav-wrapper red darken-3'>
-      <div className='container'>
-        <ul className='right'>
-          <li><NavLink to='/'>Goals</NavLink></li>
-          <li><Link to='/projects'>Projects</Link></li>
-          <li><Link to='/newProject'>NewProject</Link></li>
-          <li><Link to='/about'>About</Link></li>
-          <li><Link to='/contact'>Contact</Link></li>
-        </ul>
-      </div>
-    </nav> 
+      <nav className="container clearfix">
+        <NavLink to='/'>Goals</NavLink>
+        <Link to='/projects'>Projects</Link>
+        <Link to='/newProject'>New project</Link>
+        <Link to='/about'>About</Link>
+        <Link to='/contact'>Contact</Link>
+      </nav>
   )
 }
 

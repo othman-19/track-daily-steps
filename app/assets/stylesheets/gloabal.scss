@@ -4,18 +4,27 @@
 
 /* mixins, variables, etc. */
 
-$gray-medium-light: #eaeaea;
+// $gray-medium-light: #eaeaea;
 
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
   -webkit-box-sizing: border-box;
   box-sizing:         border-box;
 }
+@mixin fixed_bottom {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
 
-/* universal */
+/* global */
 
 body {
-  padding-top: 00;
+  font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+}
+
+header {
+  margin-bottom: 5%;
 }
 
 section {
@@ -26,7 +35,12 @@ textarea {
   resize: vertical;
 }
 
-
+input, textarea {
+  border: 1px solid rgb(201, 194, 194);
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
 
 .center {
   text-align: center;
@@ -35,19 +49,76 @@ textarea {
   }
 }
 
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3.5em;
+  letter-spacing: -1px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: $gray-light;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+  padding: 0 10% 0 10%;
+}
+
+nav {
+  a{
+    padding: 4% 2%;
+    color: whitesmoke;
+    height: 100%;
+    display: block;
+    font-size: 0.9em;
+  }
+  a:hover {
+    background-color: rgb(90, 113, 240);
+    color: whitesmoke;
+    text-decoration: none;
+  }
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  background-color: #1d1d2c;
+  height: 8%;
+  @include fixed_bottom();
+}
+
+/* logo */
+
 .logoBar {
   background-color: #a1aac7;
 }
 
 #logo {
   margin-top: 10px;
-  font-family: 'Bungee Inline';
+  font-family: 'Bungee Inline', 'Times New Roman', Times, serif;
   font-size: 1.5em;
 }
 
 #user {
   padding-bottom: 4px;
 }
+
 .userName {
-  margin-right: 15%;
+  margin-right: 25%;
 }
