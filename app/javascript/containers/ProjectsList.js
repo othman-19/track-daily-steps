@@ -17,9 +17,9 @@ class ProjectsList extends Component {
     if (!projects[0]) {
       return (
         <div>
-          <h2 className="center">
+          <h3 className="center">
             You have no projects, click on New to create one.
-          </h2>
+          </h3>
         </div>
       );
     }

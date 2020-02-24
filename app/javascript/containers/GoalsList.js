@@ -18,7 +18,7 @@ class GoalsList extends Component {
       return (
         <div>
           <h2 className="center">
-            You have no track, go to projects and define a one.
+            You have no track, go to projects and define one.
           </h2>
         </div>
       );
