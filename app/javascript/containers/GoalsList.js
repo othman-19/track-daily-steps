@@ -14,9 +14,16 @@ class GoalsList extends Component {
 
   render() {
     let { goals } = this.props;
-    /*eslint-disable */
-    goals = (goals) ? goals.map(goal => <Goal key={goal.id} goal={goal} />) : <p>Goals loading</p>;
-    /*eslint-disable */
+    if (goals[0].description === 'initial goal') {
+      return (
+        <div>
+          <h2 className="center">
+            You have no track, go to projects and define a one.
+          </h2>
+        </div>
+      );
+    }
+    goals = goals ? goals.map(goal => <Goal key={goal.id} goal={goal} />) : <p>Goals loading</p>;
     return (
       <div>
         {goals}

@@ -14,6 +14,15 @@ class ProjectsList extends Component {
 
   render() {
     let { projects } = this.props;
+    if (projects[0].name === 'project_name') {
+      return (
+        <div>
+          <h2 className="center">
+            You have no projects, click on New to create one.
+          </h2>
+        </div>
+      );
+    }
     if (projects) {
       projects = projects.map(project => <Project key={project.id} project={project} />);
     } else {
