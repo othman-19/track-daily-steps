@@ -17,7 +17,7 @@ class GoalsForm extends Component {
     let { match: { params: { projectId } } } = this.props;
     projectId = Number(projectId);
     this.setState({
-      project_id: projectId,
+      projectId,
       [e.target.name]: e.target.value,
     });
   }
