@@ -14,3 +14,5 @@ files:
     - "Rakefile"
     - "README.md"
     - "node_modules/**/*"
+    - "app/assets/stylesheets/circle.css"
+    - spec/rails_helper.rb
