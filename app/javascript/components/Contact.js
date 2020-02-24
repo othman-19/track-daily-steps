@@ -2,14 +2,16 @@ import React from 'react';
 
 function Contact() {
   return (
-    <div className='Contact container'>
+    <div className="Contact container">
       <h3>Contact Us</h3>
       <p>
         For General Inquiries, please review our Frequently Asked Questions (FAQ).
       </p>
       <p>
         You have a concern, comment or compliment from a
-        recent <strong>Track Daily Progress</strong> services experience?
+        recent
+        <strong>Track Daily Progress</strong>
+        services experience?
         We would like to hear from you.
       </p>
       <p>

@@ -6,13 +6,17 @@ import Goal from '../components/Goal';
 
 class GoalsList extends Component {
   componentDidMount() {
+    const { getGoals } = this.props;
     fetch('/api/goals')
       .then(res => res.json())
-      .then(data => this.props.getGoals(data));
+      .then(data => getGoals(data));
   }
-  
+
   render() {
-    const goals = (this.props.goals) ? this.props.goals.map(goal => <Goal key={goal.id} goal={goal}  />) : <p>Goals loading</p>;
+    let { goals } = this.props;
+    /*eslint-disable */
+    goals = (goals) ? goals.map(goal => <Goal key={goal.id} goal={goal} />) : <p>Goals loading</p>;
+    /*eslint-disable */
     return (
       <div>
         {goals}
@@ -20,6 +24,14 @@ class GoalsList extends Component {
     );
   }
 }
+/* eslint react/prop-types: 0 */
+/* eslint react/forbid-prop-types: 0 */
+
+GoalsList.propTypes = {
+  goals: PropTypes.arrayOf(PropTypes.object).isRequired,
+  getGoals: PropTypes.func.isRequired,
+  // id: PropTypes.number.isRequired,
+};
 
 const mapStateToProps = state => ({
   goals: state.goals,

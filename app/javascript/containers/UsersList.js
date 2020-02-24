@@ -5,7 +5,7 @@ class Users extends Component {
     super();
     this.state = {
       users: null,
-      current_user: null,
+      currentUser: null,
     };
   }
 
@@ -15,22 +15,30 @@ class Users extends Component {
       .then(data => {
         this.setState({
           users: data[0],
-          current_user: data[1],
+          currentUser: data[1],
         });
       });
   }
 
   render() {
-
-    const users = this.state.users ? this.state.users.map(user => {
-      return (<div key={user.id}>
+    let { users } = this.state;
+    const { currentUser } = this.state;
+    users = users ? users.map(user => (
+      <div key={user.id}>
         <p>{user.email}</p>
-      </div>);
-    }) : <p>No users yet...</p>
+      </div>
+    )) : <p>No users yet...</p>;
     return (
       <div>
         {users}
-        { this.state.current_user ? <h3>current user: {this.state.current_user.email}</h3> : 'boo'}
+        { currentUser
+          ? (
+            <h3>
+              current user:
+              {currentUser.email}
+            </h3>
+          )
+          : 'No'}
       </div>
     );
   }

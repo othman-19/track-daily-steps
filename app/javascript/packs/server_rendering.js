@@ -2,4 +2,4 @@
 // It must expose react_ujs as `ReactRailsUJS` and prepare a require context.
 // var componentRequireContext = require.context("components", true);
 // import { useContext } from "react_ujs";
-// useContext(componentRequireContext); 
+// useContext(componentRequireContext);

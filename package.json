@@ -6,7 +6,6 @@
     "@rails/webpacker": "4.2.2",
     "axios": "^0.19.2",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
-    "eslint-plugin-react": "^7.18.3",
     "preact": "^10.3.2",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
@@ -19,11 +18,30 @@
   "devDependencies": {
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.18.3",
+    "eslint-plugin-react-hooks": "^1.7.0",
     "webpack-dev-server": "^3.10.3"
   },
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com:othman-19/track-daily-steps.git",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/othman-19/track-daily-steps.git"
+  },
   "author": "othmane <othman-19@hotmail.fr>",
-  "license": "MIT"
+  "license": "MIT",
+  "description": "The Track daily steps project is the final capstone project. It is a mobile web app that tracks the daily projects tasks of the user. It's a real-world-like project, built with business specifications that will get feedback about the achievement of technical and soft skills gained.",
+  "bugs": {
+    "url": "https://github.com/othman-19/track-daily-steps/issues"
+  },
+  "homepage": "https://github.com/othman-19/track-daily-steps#readme",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": []
 }

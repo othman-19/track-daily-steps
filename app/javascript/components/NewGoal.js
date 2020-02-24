@@ -7,13 +7,15 @@ class GoalsForm extends Component {
     this.state = {
       description: '',
       start: '',
-      end:''};
+      end: '',
+    };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(e) {
-    const projectId = Number(this.props.match.params.projectId);
+    let { match: { params: { projectId } } } = this.props;
+    projectId = Number(projectId);
     this.setState({
       project_id: projectId,
       [e.target.name]: e.target.value,
@@ -22,31 +24,33 @@ class GoalsForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const { description, start, end, project_id } = { ...this.state };
+    const {
+      description, start, end, projectId,
+    } = { ...this.state };
     fetch('/api/goals', {
       method: 'POST',
-      headers : {
-        'Accept': 'application/json, text/plain, */*',
+      headers: {
         'Content-type': 'application/json',
       },
-      body:JSON.stringify({
-        description: description,
-        start: start,
-        end: end,
-        project_id: project_id,
-      })
-    }).then((res) => res.json())
-      .then((data) =>  console.log(data));
+      body: JSON.stringify({
+        description,
+        start,
+        end,
+        project_id: projectId,
+      }),
+    }).then(res => res.json());
 
     this.setState({
-     description: '',
+      description: '',
       start: '',
-      end:'',
+      end: '',
       user_id: '',
       projectId: '',
     });
-    this.props.history.push('/');
+    const { history } = this.props;
+    history.push('/');
   }
+
   render() {
     const { description, start, end } = this.state;
     return (
@@ -62,7 +66,8 @@ class GoalsForm extends Component {
               required
               onChange={this.handleChange}
               placeholder="Goal description"
-            /><br/>
+            />
+            <br />
             <h5>Set start date and time</h5>
             <input
               type="datetime-local"
@@ -71,7 +76,8 @@ class GoalsForm extends Component {
               value={start}
               required
               onChange={this.handleChange}
-            /><br/>
+            />
+            <br />
             <h5>Set end date and time</h5>
             <input
               type="datetime-local"
@@ -80,7 +86,8 @@ class GoalsForm extends Component {
               value={end}
               required
               onChange={this.handleChange}
-            /><br/>
+            />
+            <br />
             <button className="submitBtn" type="submit">Submit</button>
           </div>
         </form>
@@ -88,5 +95,12 @@ class GoalsForm extends Component {
     );
   }
 }
+
+GoalsForm.propTypes = {
+  projectId: PropTypes.string.isRequired,
+  match: PropTypes.objectOf(PropTypes.object).isRequired,
+  params: PropTypes.objectOf(PropTypes.object).isRequired,
+  history: PropTypes.objectOf(PropTypes.object).isRequired,
+};
 
 export default GoalsForm;

@@ -8,7 +8,8 @@ class ProjectsForm extends Component {
       name: '',
       description: '',
       start: '',
-      end:''};
+      end: '',
+    };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -19,33 +20,36 @@ class ProjectsForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const { name, description, start, end } = { ...this.state };
-    console.log (name, description, start, end)
+    const {
+      name, description, start, end,
+    } = { ...this.state };
     fetch('/api/projects', {
       method: 'POST',
-      headers : {
-        'Accept': 'application/json, text/plain, */*',
+      headers: {
         'Content-type': 'application/json',
       },
-      body:JSON.stringify({
-        name: name,
-        description: description,
-        start: start,
-        end: end
-      })
-    }).then((res) => res.json())
-      .then((data) =>  console.log(data));
+      body: JSON.stringify({
+        name,
+        description,
+        start,
+        end,
+      }),
+    }).then(res => res.json());
 
-    this.setState({ name: '',
-     description: '',
+    this.setState({
+      name: '',
+      description: '',
       start: '',
-      end:'' });
-
-      this.props.history.push('/projects');
-    }
+      end: '',
+    });
+    const { history } = this.props;
+    history.push('/projects');
+  }
 
   render() {
-    const { name, description, start, end } = this.state;
+    const {
+      name, description, start, end,
+    } = this.state;
     return (
       <div className="">
         <h3 className="center">Create a new Project</h3>
@@ -60,7 +64,8 @@ class ProjectsForm extends Component {
               required
               onChange={this.handleChange}
               placeholder="Project Title"
-            /><br/>
+            />
+            <br />
             <h5>Set project description</h5>
             <textarea
               name="description"
@@ -69,7 +74,8 @@ class ProjectsForm extends Component {
               required
               onChange={this.handleChange}
               placeholder="Project description"
-            /><br/>
+            />
+            <br />
             <h5>Set start date and time</h5>
             <input
               type="datetime-local"
@@ -78,7 +84,8 @@ class ProjectsForm extends Component {
               value={start}
               required
               onChange={this.handleChange}
-            /><br/>
+            />
+            <br />
             <h5>Set end date and time</h5>
             <input
               type="datetime-local"
@@ -87,7 +94,8 @@ class ProjectsForm extends Component {
               value={end}
               required
               onChange={this.handleChange}
-            /><br/>
+            />
+            <br />
             <button className="submitBtn" type="submit">Submit</button>
           </div>
         </form>
@@ -95,5 +103,9 @@ class ProjectsForm extends Component {
     );
   }
 }
+
+ProjectsForm.propTypes = {
+  history: PropTypes.objectOf(PropTypes.object).isRequired,
+};
 
 export default ProjectsForm;

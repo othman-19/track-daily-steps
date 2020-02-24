@@ -5,23 +5,32 @@ import { getProjectGoals } from '../actions/index';
 import Goal from '../components/Goal';
 
 class ProjectGoals extends Component {
-  
   componentDidMount() {
-    const id = this.props.match.params.id;
+    const { match: { params: { id } } } = this.props;
+    const { getProjectGoals } = this.props;
     fetch(`/api/projects/${id}`)
-    .then(res => res.json())
-    .then(data => this.props.getProjectGoals(data[1]));
+      .then(res => res.json())
+      .then(data => getProjectGoals(data[1]));
   }
+
   render() {
-    let { projectGoals } = this.props
-    projectGoals = projectGoals.map(goal => <Goal key={goal.id} goal={goal} />)
+    let { projectGoals } = this.props;
+    projectGoals = projectGoals.map(goal => <Goal key={goal.id} goal={goal} />);
     return (
-      < div >
+      <div>
         { projectGoals }
       </div>
     );
   }
 }
+
+ProjectGoals.propTypes = {
+  id: PropTypes.string.isRequired,
+  match: PropTypes.objectOf(PropTypes.object).isRequired,
+  params: PropTypes.objectOf(PropTypes.object).isRequired,
+  projectGoals: PropTypes.func.isRequired,
+  getProjectGoals: PropTypes.func.isRequired,
+};
 
 const mapStateToProps = state => ({
   projectGoals: state.projectGoals,
@@ -31,5 +40,5 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   getProjectGoals: projectGoals => dispatch(getProjectGoals(projectGoals)),
 });
-export default connect(mapStateToProps, mapDispatchToProps)(ProjectGoals);
 
+export default connect(mapStateToProps, mapDispatchToProps)(ProjectGoals);
