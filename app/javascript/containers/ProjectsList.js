@@ -14,7 +14,7 @@ class ProjectsList extends Component {
 
   render() {
     let { projects } = this.props;
-    if (!projects[0].name) {
+    if (!projects[0]) {
       return (
         <div>
           <h2 className="center">

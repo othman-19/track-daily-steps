@@ -14,7 +14,7 @@ class GoalsList extends Component {
 
   render() {
     let { goals } = this.props;
-    if (!goals[0].description) {
+    if (!goals[0]) {
       return (
         <div>
           <h2 className="center">
