@@ -1,11 +1,11 @@
 
 input[type=text], input[type=password], input[type=email], textarea, input[type=datetime-local] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
   background: #f1f1f1;
+  border: none;
+  display: inline-block;
+  margin: 5px 0 22px 0;
+  padding: 15px;
+  width: 100%;
 }
 
 input[type=text]:focus, input[type=password]:focus, input[type=email]:focus {

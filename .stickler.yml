@@ -16,3 +16,5 @@ files:
     - "node_modules/**/*"
     - "app/assets/stylesheets/circle.css"
     - spec/rails_helper.rb
+    - app/assets/stylesheets/gloabal.scss
+    - app/assets/stylesheets/form.css

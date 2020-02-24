@@ -22,6 +22,8 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.18.3",
     "eslint-plugin-react-hooks": "^1.7.0",
+    "stylelint": "^13.2.0",
+    "stylelint-config-recommended": "^3.0.0",
     "webpack-dev-server": "^3.10.3"
   },
   "version": "1.0.0",
