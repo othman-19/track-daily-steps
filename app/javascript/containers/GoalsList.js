@@ -17,9 +17,9 @@ class GoalsList extends Component {
     if (!goals[0]) {
       return (
         <div>
-          <h2 className="center">
+          <h3 className="center">
             You have no track, go to projects and define one.
-          </h2>
+          </h3>
         </div>
       );
     }
@@ -31,13 +31,9 @@ class GoalsList extends Component {
     );
   }
 }
-/* eslint react/prop-types: 0 */
-/* eslint react/forbid-prop-types: 0 */
-
 GoalsList.propTypes = {
   goals: PropTypes.arrayOf(PropTypes.object).isRequired,
   getGoals: PropTypes.func.isRequired,
-  // id: PropTypes.number.isRequired,
 };
 
 const mapStateToProps = state => ({
