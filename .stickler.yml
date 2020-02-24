@@ -4,7 +4,7 @@ linters:
   csslint:
   stylelint:
   eslint:
-    config: './eslint.config'  
+    config: './eslintrc.json'  
 files:
   ignore:
     - "bin/*"
