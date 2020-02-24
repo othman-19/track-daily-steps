@@ -21,7 +21,6 @@ The Track daily steps project is the final capstone project. It is a mobile web 
 
 ## Test With
 - Rspec
-- Jest
 
 To get a local copy up and running follow these simple example steps.
 
@@ -58,6 +57,10 @@ To get a local copy up and running follow these simple example steps.
 Contributions, issues and feature requests are welcome!
 
 Feel free to check the [issues page](issues/).
+
+## Credits
+  UI Design to [Gregoire Vella](https://www.behance.net/gregoirevella)
+  CSS Percentage Circle to [Andre Firchow](http://firchow.net/)
 
 ## Show your support
 
