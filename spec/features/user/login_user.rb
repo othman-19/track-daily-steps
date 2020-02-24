@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 # Log in user.
 RSpec.describe 'Login user', type: :feature do

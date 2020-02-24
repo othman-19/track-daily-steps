@@ -1,6 +1,5 @@
 class PagesController < ApplicationController
-  def index
-  end
-  def welcome
-  end
+  def index; end
+
+  def welcome; end
 end

@@ -1,10 +1,10 @@
-module API  
+module API
   class GoalsController < ApplicationController
     before_action :set_goal, only: %i[show edit update destroy]
     before_action :authenticate_user!, only: %i[create destroy]
     before_action :authorized?, only: %i[update destroy]
 
-    def new 
+    def new
       @goal = Goal.new
     end
 
@@ -13,7 +13,7 @@ module API
       render json: @user_goals
     end
 
-    def show;end
+    def show; end
 
     def edit; end
 
@@ -26,8 +26,8 @@ module API
           format.json { render json: @goal.errors, status: :unprocessable_entity }
         end
       end
-    end 
-    
+    end
+
     def update
       respond_to do |format|
         if @goal.update(goal_params)
@@ -49,14 +49,17 @@ module API
     end
 
     private
-      def goal_params
-        params.require(:goal).permit(:description, :start, :end, :user_id, :project_id)
-      end
-      def set_goal
-        @goal = Goal.find(params[:id])
-      end
-      def authorized?
-        redirect_to :authenticated_root unless @goal.user_id == current_user.id
-      end
+
+    def goal_params
+      params.require(:goal).permit(:description, :start, :end, :user_id, :project_id)
+    end
+
+    def set_goal
+      @goal = Goal.find(params[:id])
+    end
+
+    def authorized?
+      redirect_to :authenticated_root unless @goal.user_id == current_user.id
+    end
   end
 end

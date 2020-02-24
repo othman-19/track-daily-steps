@@ -8,22 +8,22 @@ class Project < ApplicationRecord
 
   default_scope -> { order(created_at: :desc) }
 
-  def as_json(options={})
-    options[:methods] = [:startTime, :estimation, :performance]
+  def as_json(options = {})
+    options[:methods] = %i[start_time estimation performance]
     super
   end
-  
-  def startTime
-    self.start.strftime('%I:%M:%S %p')
+
+  def start_time
+    start.strftime('%I:%M:%S %p')
   end
-  
+
   def estimation
-    Time.at(self.end-self.start).strftime("%H:%M:%S")
+    Time.at(self.end - start).strftime('%H:%M:%S')
   end
 
   def performance
-    if self.goals.count != 0
-      (self.goals.where(achieved: true).count / self.goals.count) * 100
+    if goals.count != 0
+      (goals.where(achieved: true).count / goals.count) * 100
     else
       0
     end

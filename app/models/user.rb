@@ -15,7 +15,8 @@ class User < ApplicationRecord
   has_many :projects, through: :goals
 
   private
-    def downcase_email
-      self.email = email.downcase
-    end
+
+  def downcase_email
+    self.email = email.downcase
+  end
 end

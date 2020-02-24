@@ -1,16 +1,16 @@
-module API  
+module API
   class ProjectsController < ApplicationController
     before_action :set_project, only: %i[show edit update destroy]
     before_action :authenticate_user!, only: %i[create destroy]
 
-    def new 
+    def new
       @project = Project.new
     end
 
     def index
-      @allProjects = Project.all
+      @all_projects = Project.all
       @projects = current_user.projects
-      render json: @allProjects
+      render json: @all_projects
     end
 
     def show
@@ -27,10 +27,10 @@ module API
           format.json { render json: @project.errors, status: :unprocessable_entity }
         end
       end
-    end 
+    end
 
-    def edit;end 
-    
+    def edit; end
+
     def update
       respond_to do |format|
         if @projet.update(project_params)
@@ -50,12 +50,15 @@ module API
         format.json { head :no_content }
       end
     end
+
     private
-      def project_params
-        params.require(:project).permit(:name, :description, :start, :end)
-      end
-      def set_project
-        @project = Project.find(params[:id])
-      end
+
+    def project_params
+      params.require(:project).permit(:name, :description, :start, :end)
+    end
+
+    def set_project
+      @project = Project.find(params[:id])
+    end
   end
 end
