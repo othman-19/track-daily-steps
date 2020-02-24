@@ -12,7 +12,7 @@ function About() {
         For all inquiries contact the team at ontech@fakemail.fake
         and interact with us on Twitter and Facebook.
       </p>
-      <p class="copy-right">&copy; Othmane Namani, 20, github:othman-19</p>
+      <p className="copy-right">&copy; Othmane Namani, 20, github:othman-19</p>
     </div>
   );
 }

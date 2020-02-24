@@ -53,7 +53,7 @@ class GoalsForm extends Component {
       <div>
         <h3 className="center">Create a new Goal</h3>
         <form onSubmit={this.handleSubmit} className="books-form">
-          <div class="container">
+          <div className="container">
             <h5>Goal description</h5>
             <textarea
               name="description"

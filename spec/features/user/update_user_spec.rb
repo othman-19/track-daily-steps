@@ -6,7 +6,7 @@ RSpec.describe 'Update user', type: :feature do
                        email: 'tester8@gmail.com',
                        password: 'password')
 
-    visit authenticated_root_path
+    visit new_user_registration_path
 
     fill_in 'Name', with: tester8.name
     fill_in 'Email', with: tester8.email

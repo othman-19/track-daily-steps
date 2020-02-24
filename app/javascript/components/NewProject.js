@@ -50,7 +50,7 @@ class ProjectsForm extends Component {
       <div className="">
         <h3 className="center">Create a new Project</h3>
         <form onSubmit={this.handleSubmit} className="books-form">
-          <div class="container">
+          <div className="container">
             <h5>Set project name</h5>
             <input
               type="text"

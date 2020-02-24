@@ -18,7 +18,7 @@ function Contact() {
       <p>
         If you would like to be contacted, send us an email to: ontech@fakemail.fake .
       </p>
-      <p class="copy-right">&copy; Othmane Namani, 20, github:othman-19</p>
+      <p className="copy-right">&copy; Othmane Namani, 20, github:othman-19</p>
     </div>
   );
 }
