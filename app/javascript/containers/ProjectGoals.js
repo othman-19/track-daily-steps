@@ -10,7 +10,7 @@ class ProjectGoals extends Component {
     const { getProjectGoals } = this.props;
     fetch(`/api/projects/${id}`)
       .then(res => res.json())
-      .then(data => getProjectGoals(data[1]));
+      .then(data => getProjectGoals(data.project_user_goals));
   }
 
   render() {

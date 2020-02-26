@@ -14,8 +14,8 @@ module API
     end
 
     def show
-      @project_user_goals = @project.goals.where(user_id: current_user.id)
-      render json: [@project, @project_user_goals]
+      @project_user_goals = @project.goals
+      render json: {project: @project, project_user_goals: @project_user_goals}
     end
 
     def create
@@ -33,7 +33,7 @@ module API
 
     def update
       respond_to do |format|
-        if @projet.update(project_params)
+        if @project.update(project_params)
           format.html { redirect_to @project, notice: 'Project was successfully updated.' }
           format.json { render :show, status: :ok, location: @project }
         else
