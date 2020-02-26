@@ -18,6 +18,7 @@ RSpec.configure do |config|
   config.include Devise::Test::ControllerHelpers, type: :controller
   # config.extend ControllerMacros, type: :controller
   # config.include IntegrationSpecHelper, type: :request
+  config.include RequestSpecHelper, type: :request
   config.include Warden::Test::Helpers
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
