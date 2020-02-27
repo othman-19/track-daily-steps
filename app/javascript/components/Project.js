@@ -1,14 +1,14 @@
+/* eslint-disable camelcase */
 import React from 'react';
 import PropTypes from 'prop-types';
-// Route
 import { Route, Link, withRouter } from 'react-router-dom';
 import { estimation, ProjectPerformance } from '../timeCounter';
-import ProjectGoals from '../containers/ProjectGoals';
+// import ProjectGoals from '../containers/ProjectGoals';
 import NewGoal from './NewGoal';
 
 function Project({
   project: {
-    id, name, description, start, end, startTime,
+    id, name, description, start, end, start_time,
   },
 }) {
   return (
@@ -23,7 +23,7 @@ function Project({
         { new Date(start).toDateString() }
         <span>
           at:
-          { startTime }
+          { start_time }
         </span>
       </h5>
       <div className="container tracks">
@@ -63,7 +63,7 @@ function Project({
         </div>
         <Route key={Math.random()} path="/newGoal/:projectId" component={NewGoal} />
       </div>
-      <Route key={Math.random()} path="/projects/:projectId" component={ProjectGoals} />
+      {/* <Route key={Math.random()} path="/projects/:projectId" component={ProjectGoals} /> */}
     </div>
   );
 }

@@ -1,10 +1,11 @@
+/* eslint-disable camelcase */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { GoalPerformance } from '../timeCounter';
 
 function Goal({
   goal: {
-    description, start, end, startTime, key,
+    description, start, end, start_time,
   },
 }) {
   return (
@@ -12,9 +13,8 @@ function Goal({
       <h5 className="center startTime">
         { new Date(start).toDateString() }
         <span>
-          {key}
           at:
-          { startTime }
+          { start_time }
         </span>
       </h5>
       <div className="container tracks">

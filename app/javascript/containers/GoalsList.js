@@ -15,7 +15,7 @@ class GoalsList extends Component {
   render() {
     let { goals } = this.props;
     goals = goals
-      ? goals.map(goal => <Goal key={goal.id} goal={goal} />)
+      ? goals.map(goal => <Goal key={Math.random()} goal={goal} />)
       : (
         <h3 className="center">
           You have no track, go to projects and define one.
