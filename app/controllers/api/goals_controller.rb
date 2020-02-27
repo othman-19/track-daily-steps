@@ -9,11 +9,14 @@ module API
     end
 
     def index
-      @user_goals = Goal.where(user_id: current_user.id)
+      #@user_goals = Goal.where(user_id: current_user.id)
+      @user_goals = Goal.all
       render json: @user_goals
     end
 
-    def show; end
+    def show
+      render json: {goal: @goal}
+    end
 
     def edit; end
 
