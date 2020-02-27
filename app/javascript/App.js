@@ -17,7 +17,7 @@ function App() {
           <Route exact path="/" component={GoalsList} />
           <Route path="/goals" component={GoalsList} />
           <Route path="/projects" component={ProjectsList} />
-          <Route exact path="/newProject" component={NewProject} />
+          <Route key={Math.random()} exact path="/newProject" component={NewProject} />
           <Route key={Math.random()} path="/newGoal/:projectId" component={NewGoal} />
           <Route path="/contact" component={Contact} />
           <Route path="/about" component={About} />

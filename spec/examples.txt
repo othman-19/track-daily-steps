@@ -37,3 +37,5 @@ example_id                                              | status | run_time     
 ./spec/models/user_spec.rb[1:1:10]                      | passed | 0.10928 seconds       |
 ./spec/models/user_spec.rb[1:2:1:1]                     | passed | 0.0022 seconds        |
 ./spec/models/user_spec.rb[1:2:2:1]                     | passed | 0.00185 seconds       |
+./spec/requests/projects_spec.rb[1:1:1:1]               | passed | 0.02619 seconds       |
+./spec/requests/projects_spec.rb[1:1:1:2]               | failed | 2.12 seconds          |
