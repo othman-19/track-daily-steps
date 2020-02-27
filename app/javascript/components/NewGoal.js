@@ -56,9 +56,9 @@ class GoalsForm extends Component {
     const { description, start, end } = this.state;
     return (
       <div>
-        <h3 className="center">Create a new Goal</h3>
         <form onSubmit={this.handleSubmit} className="books-form">
           <div className="container">
+            <h3>Create a new Goal</h3>
             <h5>Goal description</h5>
             <textarea
               name="description"

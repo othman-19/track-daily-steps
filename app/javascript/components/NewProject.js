@@ -52,9 +52,9 @@ class ProjectsForm extends Component {
     } = this.state;
     return (
       <div className="">
-        <h3 className="center">Create a new Project</h3>
         <form onSubmit={this.handleSubmit} className="books-form">
           <div className="container">
+            <h3>Create a new Project</h3>
             <h5>Set project name</h5>
             <input
               type="text"

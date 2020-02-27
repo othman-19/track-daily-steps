@@ -50,6 +50,6 @@ hr {
 
 @media screen and (min-width: 1024px) {
   .submitBtn, .signUp, input[type=text], input[type=password], input[type=email], textarea, input[type=datetime-local] {
-    width: 50%;
+    width: 60%;
   }
 }
