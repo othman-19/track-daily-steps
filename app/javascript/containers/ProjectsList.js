@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+// import { Route } from 'react-router-dom';
+// import ProjectGoals from './ProjectGoals';
 import { getProjects } from '../actions/index';
 import Project from '../components/Project';
 
@@ -14,23 +16,17 @@ class ProjectsList extends Component {
 
   render() {
     let { projects } = this.props;
-    if (!projects[0]) {
-      return (
-        <div>
-          <h3 className="center">
-            You have no projects, click on New to create one.
-          </h3>
-        </div>
+    projects = projects
+      ? projects.map(project => <Project key={project.id} project={project} />)
+      : (
+        <h3 className="center">
+          You have no projects, click on New to create one.
+        </h3>
       );
-    }
-    if (projects) {
-      projects = projects.map(project => <Project key={project.id} project={project} />);
-    } else {
-      projects = <div> projects loading... </div>;
-    }
     return (
       <div>
         { projects }
+        {/* <Route key={Math.random()} path="/projects/:projectId" component={ProjectGoals} /> */}
       </div>
     );
   }

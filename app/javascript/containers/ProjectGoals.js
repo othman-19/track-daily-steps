@@ -6,9 +6,9 @@ import Goal from '../components/Goal';
 
 class ProjectGoals extends Component {
   componentDidMount() {
-    const { match: { params: { id } } } = this.props;
+    const { match: { params: { projectId } } } = this.props;
     const { getProjectGoals } = this.props;
-    fetch(`/api/projects/${id}`)
+    fetch(`/api/projects/${projectId}`)
       .then(res => res.json())
       .then(data => getProjectGoals(data.project_user_goals));
   }
@@ -25,10 +25,8 @@ class ProjectGoals extends Component {
 }
 
 ProjectGoals.propTypes = {
-  id: PropTypes.string.isRequired,
-  match: PropTypes.objectOf(PropTypes.object).isRequired,
-  params: PropTypes.objectOf(PropTypes.object).isRequired,
-  projectGoals: PropTypes.func.isRequired,
+  match: PropTypes.objectOf(PropTypes.any).isRequired,
+  projectGoals: PropTypes.PropTypes.arrayOf(PropTypes.object).isRequired,
   getProjectGoals: PropTypes.func.isRequired,
 };
 

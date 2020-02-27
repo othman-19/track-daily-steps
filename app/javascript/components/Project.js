@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+// Route
 import { Route, Link, withRouter } from 'react-router-dom';
-import ProjectGoals from '../containers/ProjectGoals';
 import { estimation, ProjectPerformance } from '../timeCounter';
+import ProjectGoals from '../containers/ProjectGoals';
+import NewGoal from './NewGoal';
 
 function Project({
   project: {
@@ -59,14 +61,17 @@ function Project({
             </div>
           </div>
         </div>
-        {/* <Route key={Math.random()} path={'/newGoal/:projectId'} component={NewGoal}/> */}
+        <Route key={Math.random()} path="/newGoal/:projectId" component={NewGoal} />
       </div>
-      <Route key={Math.random()} path="/projects/:id" component={ProjectGoals} />
+      <Route key={Math.random()} path="/projects/:projectId" component={ProjectGoals} />
     </div>
   );
 }
 
 Project.propTypes = {
-  project: PropTypes.objectOf(PropTypes.object).isRequired,
+  project: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.object,
+  ]).isRequired,
 };
 export default withRouter(Project);

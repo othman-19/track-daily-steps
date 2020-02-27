@@ -8,6 +8,7 @@ class GoalsForm extends Component {
       description: '',
       start: '',
       end: '',
+      projectId: '',
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -97,10 +98,8 @@ class GoalsForm extends Component {
 }
 
 GoalsForm.propTypes = {
-  projectId: PropTypes.string.isRequired,
-  match: PropTypes.objectOf(PropTypes.object).isRequired,
-  params: PropTypes.objectOf(PropTypes.object).isRequired,
-  history: PropTypes.objectOf(PropTypes.object).isRequired,
+  match: PropTypes.objectOf(PropTypes.any).isRequired,
+  history: PropTypes.objectOf(PropTypes.any).isRequired,
 };
 
 export default GoalsForm;

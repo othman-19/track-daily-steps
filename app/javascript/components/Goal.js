@@ -47,7 +47,10 @@ function Goal({
 }
 
 Goal.propTypes = {
-  goal: PropTypes.objectOf(PropTypes.object).isRequired,
+  goal: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.object,
+  ]).isRequired,
 };
 
 export default Goal;
