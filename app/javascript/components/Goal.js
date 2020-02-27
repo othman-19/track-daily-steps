@@ -32,7 +32,7 @@ function Goal({
             </div>
           </div>
         </div>
-        <div className="center tracktime">
+        <div className="center tracktime container">
           <h5 className="track">
             { GoalPerformance(start, end) >= 100 ? <i className="fas fa-trophy icon-green" /> : <i className="fas fa-trophy" /> }
           </h5>

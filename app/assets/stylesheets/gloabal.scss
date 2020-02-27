@@ -47,6 +47,11 @@ input, textarea {
   }
 }
 
+.right {
+  text-align: right;
+  float: right;
+}
+
 .clearfix::after {
   content: "";
   clear: both;
@@ -137,8 +142,16 @@ nav {
   flex-wrap: nowrap;
 }
 
+.performance {
+  display: flex;
+}
+.achievment{
+  flex-grow: 1;
+
+}
+
 .tracktime {
-  flex-grow: 2;
+  flex-direction: row;
 }
 
 
@@ -178,4 +191,37 @@ i:hover {
 
 .notice {
   background-color: rgb(107, 214, 107);
+}
+
+@media screen and (min-width: 425px) {
+  // project
+  .fas {
+    font-size: 2.5em;
+  }
+}
+
+@media screen and (min-width: 520px) {
+  // project
+  .fas {
+    font-size: 2.8em;
+  }
+  .startTime {
+    font-size: 1.5em;
+  }
+  .performance {
+    font-size: 1.3em;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  // project
+  .fas {
+    font-size: 3.5em;
+  }
+  .startTime {
+    font-size: 1.5em;
+  }
+  .performance {
+    font-size: 1.3em;
+  }
 }

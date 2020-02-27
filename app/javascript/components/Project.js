@@ -41,14 +41,15 @@ function Project({
               Estimated time:
               { estimation(start, end) }
             </h5>
-            <h5 className="track">
-              { ProjectPerformance(start, end) >= 100 ? <i className="fas fa-trophy icon-green" /> : <i className="fas fa-trophy" /> }
-            </h5>
+
             <h5 className="">
               <Link to={`/newGoal/${id}`} key={Math.random()}>Add a new goal</Link>
             </h5>
           </div>
         </div>
+        <h5 className=" achievment track center">
+          { ProjectPerformance(start, end) >= 100 ? <i className="fas fa-trophy icon-green" /> : <i className="fas fa-trophy" /> }
+        </h5>
         <div className="">
           <div className="c100 p12 small">
             <span>
