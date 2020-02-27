@@ -13,7 +13,7 @@ function Goal({
       <h5 className="center startTime">
         { new Date(start).toDateString() }
         <span>
-          at:
+          <span className="title">at:</span>
           { start_time }
         </span>
       </h5>
@@ -32,12 +32,12 @@ function Goal({
             </div>
           </div>
         </div>
-        <div className="center tracktime container">
+        <div className="right tracktime container">
           <h5 className="track">
             { GoalPerformance(start, end) >= 100 ? <i className="fas fa-trophy icon-green" /> : <i className="fas fa-trophy" /> }
           </h5>
           <h5 className="track">
-            description:
+            <span className="title">description:</span>
             { description }
           </h5>
         </div>

@@ -58,6 +58,9 @@ input, textarea {
   display: table;
 }
 
+.title {
+  font-weight: 600;
+} 
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -85,23 +88,30 @@ p {
 
 nav {
   a{
-    padding: 4% 2%;
+    padding: 4% 0;
     color:$blue-grey;
     height: 100%;
     display: block;
     font-size: 0.9em;
+    flex-grow: 1;
+    text-align: center;
+    align-items: center;
+    @include box_sizing();
   }
   a:hover {
     background-color: $blue-grey;
     color: $blue-dark;
     text-decoration: none;
+    flex-grow: 1;
   }
+  width: 100%;
   z-index: 2;
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
   background-color: $blue-dark;
   height: 8%;
+  @include box_sizing();
   @include fixed_bottom();
 }
 
@@ -151,9 +161,8 @@ nav {
 }
 
 .tracktime {
-  flex-direction: row;
+  flex-grow: 1;
 }
-
 
 .track {
   padding: 0;
@@ -165,7 +174,7 @@ nav {
   font-size: 2em;
 }
 
-i:hover {
+.fas:hover {
   font-size: 2.5em;
 }
 
@@ -193,35 +202,108 @@ i:hover {
   background-color: rgb(107, 214, 107);
 }
 
+@media screen and (min-width: 375px) {
+  //navbar
+  nav {
+    a{
+      padding-top: 3.5% ;
+    }
+  }
+}
+
 @media screen and (min-width: 425px) {
-  // project
+  // project & goal
   .fas {
     font-size: 2.5em;
+  }
+
+  //navbar
+  nav {
+    a{
+      padding-top: 3% ;
+      font-size: 1em;
+    }
   }
 }
 
 @media screen and (min-width: 520px) {
-  // project
+  // project & goal
   .fas {
     font-size: 2.8em;
   }
+
+  .fas:hover {
+    font-size: 3em;
+  }
+  
   .startTime {
     font-size: 1.5em;
   }
   .performance {
     font-size: 1.3em;
   }
+
+  nav {
+    a{
+      padding-top: 1% ;
+      font-size: 1.2em;
+    }
+  }
+
 }
 
 @media screen and (min-width: 768px) {
-  // project
+  // project & goal
   .fas {
     font-size: 3.5em;
+  }
+
+  .fas:hover {
+    font-size: 4em;
   }
   .startTime {
     font-size: 1.5em;
   }
   .performance {
     font-size: 1.3em;
+  }
+  nav {
+    a{
+      padding-top: 1% ;
+      font-size: 1.2em;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  nav {
+    a{
+      font-size: 1.5em;
+      padding: 1% 0 1.5% 0 ;
+      color: $blue-dark;
+    }
+
+    a:hover {
+      background-color: $blue-dark;
+      color: $blue-grey;
+      text-decoration: none;
+    }
+    position: static;
+    background-color:$blue-grey;
+    margin-bottom: 5%;
+  }
+  .logoBar {
+    margin-bottom: 1px;
+    padding-bottom: 2%;
+  }
+  #logo{
+    font-size: 2.5em;
+  }
+  .userName {
+    font-size: 1em;
+     float: left;
+    }
+  .sign-out-in{
+    float: right;
   }
 }

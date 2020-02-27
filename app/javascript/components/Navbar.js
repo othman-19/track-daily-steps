@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, NavLink, withRouter } from 'react-router-dom';
 
 const Navbar = () => (
-  <nav className="container clearfix">
+  <nav className="clearfix">
     <NavLink to="/">Goals</NavLink>
     <Link to="/projects">Projects</Link>
     <Link to="/newProject">New</Link>

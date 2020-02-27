@@ -3,7 +3,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Route, Link, withRouter } from 'react-router-dom';
 import { estimation, ProjectPerformance } from '../timeCounter';
-// import ProjectGoals from '../containers/ProjectGoals';
 import NewGoal from './NewGoal';
 
 function Project({
@@ -64,7 +63,6 @@ function Project({
         </div>
         <Route key={Math.random()} path="/newGoal/:projectId" component={NewGoal} />
       </div>
-      {/* <Route key={Math.random()} path="/projects/:projectId" component={ProjectGoals} /> */}
     </div>
   );
 }
