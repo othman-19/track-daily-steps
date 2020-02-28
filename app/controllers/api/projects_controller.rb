@@ -15,7 +15,7 @@ module API
 
     def show
       @project_user_goals = @project.goals
-      render json: {project: @project, project_user_goals: @project_user_goals}
+      render json: { project: @project, project_user_goals: @project_user_goals }
     end
 
     def create

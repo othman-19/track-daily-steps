@@ -29,7 +29,7 @@ RSpec.describe API::ProjectsController, type: :controller do
       it 'returns the project' do
         result = JSON(response.body)
         expect(result).not_to be_empty
-        expect(result["project"]["id"]).to eq(project.id)
+        expect(result['project']['id']).to eq(project.id)
       end
 
       it 'returns status code 200' do
@@ -40,24 +40,24 @@ RSpec.describe API::ProjectsController, type: :controller do
 
   describe 'POST /projcts' do
     render_views
-    let(:valid_attributes) { { name: 'Test',
-                               description: 'controller test',
-                               start: Time.new,
-                               end:  Time.new + 60000 } }
+    let(:valid_attributes) do
+      { name: 'Test',
+        description: 'controller test',
+        start: Time.new,
+        end: Time.new + 60_000 }
+    end
 
     context 'when the request is valid' do
       before do
         sign_in user
         post :index, params: { name: 'Test',
-                              description: 'controller test',
-                              start: Time.new,
-                              end:  Time.new + 60000 }
+                               description: 'controller test',
+                               start: Time.new,
+                               end: Time.new + 60_000 }
       end
       it 'returns status code 200' do
         expect(response).to have_http_status(200)
       end
     end
   end
-
-
 end
