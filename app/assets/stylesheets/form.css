@@ -52,4 +52,7 @@ hr {
   .submitBtn, .signUp, input[type=text], input[type=password], input[type=email], textarea, input[type=datetime-local] {
     width: 60%;
   }
+  .welcome.submitBtn {
+    margin-left:20%
+  }
 }
