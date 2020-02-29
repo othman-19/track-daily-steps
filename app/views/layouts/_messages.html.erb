@@ -1,23 +1,5 @@
 <% if notice %>
-  <script>
-    # document.addEventListener('DOMContentLoaded', () => {
-    #   setTimeout(() => {
-    #   document.getElementById(message).slideUp();
-    #   }, 3000);
-    # });
-    
-  </script>
   <p id="message" class="notice"><%= notice %></p>
-  <script>
-    setTimeout(() => {
-      document.getElementById("message").slideUp();
-      }, 3000);
-  </script>
 <% elsif alert %>
   <p id="message" class="alert"><%= alert %></p>
-  <script>
-    setTimeout(() => {
-      document.getElementById("message").slideUp();
-      }, 3000);
-  </script>
 <% end %>
