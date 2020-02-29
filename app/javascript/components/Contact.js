@@ -1,6 +1,7 @@
 import React from 'react';
 
 function Contact() {
+  document.title = 'Contact';
   return (
     <div className="Contact container">
       <h3>Contact Us</h3>

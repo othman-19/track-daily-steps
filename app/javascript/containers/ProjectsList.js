@@ -7,6 +7,11 @@ import { getProjects } from '../actions/index';
 import Project from '../components/Project';
 
 class ProjectsList extends Component {
+  // eslint-disable-next-line camelcase
+  UNSAFE_componentWillMount() {
+    document.title = 'Projects list';
+  }
+
   componentDidMount() {
     const { getProjects } = this.props;
     fetch('/api/projects')

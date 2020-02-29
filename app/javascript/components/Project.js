@@ -42,7 +42,7 @@ function Project({
             </h5>
 
             <h5 className="">
-              <Link to={`/newGoal/${id}`} key={Math.random()}>Add a new goal</Link>
+              <Link to={`/newGoal/${id}`} key={Math.random()}>Add a new track</Link>
             </h5>
           </div>
         </div>

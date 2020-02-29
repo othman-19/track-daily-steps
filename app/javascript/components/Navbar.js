@@ -3,7 +3,7 @@ import { Link, NavLink, withRouter } from 'react-router-dom';
 
 const Navbar = () => (
   <nav className="clearfix">
-    <NavLink to="/">Goals</NavLink>
+    <NavLink to="/">Tracks</NavLink>
     <Link to="/projects">Projects</Link>
     <Link to="/newProject">New</Link>
     <Link to="/about">About</Link>

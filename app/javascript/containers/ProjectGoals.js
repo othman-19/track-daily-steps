@@ -5,6 +5,11 @@ import { getProjectGoals } from '../actions/index';
 import Goal from '../components/Goal';
 
 class ProjectGoals extends Component {
+  // eslint-disable-next-line camelcase
+  UNSAFE_componentWillMount() {
+    document.title = 'Project goals';
+  }
+
   componentDidMount() {
     const { match: { params: { projectId } } } = this.props;
     const { getProjectGoals } = this.props;

@@ -23,4 +23,9 @@ const getProjectGoals = projectGoals => ({
   payload: projectGoals,
 });
 
-export { getProjects, getUser, getGoals, getProjectGoals };
+export {
+  getProjects,
+  getUser,
+  getGoals,
+  getProjectGoals,
+};

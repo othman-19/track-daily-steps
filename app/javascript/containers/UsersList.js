@@ -9,6 +9,11 @@ class Users extends Component {
     };
   }
 
+  // eslint-disable-next-line camelcase
+  UNSAFE_componentWillMount() {
+    document.title = 'Users list';
+  }
+
   componentDidMount() {
     fetch('users')
       .then(res => res.json())

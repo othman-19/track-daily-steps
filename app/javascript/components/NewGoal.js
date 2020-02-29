@@ -14,6 +14,11 @@ class GoalsForm extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  // eslint-disable-next-line camelcase
+  UNSAFE_componentWillMount() {
+    document.title = 'New Track';
+  }
+
   handleChange(e) {
     let { match: { params: { projectId } } } = this.props;
     projectId = Number(projectId);
@@ -58,7 +63,7 @@ class GoalsForm extends Component {
       <div>
         <form onSubmit={this.handleSubmit} className="books-form">
           <div className="container">
-            <h3>Create a new Goal</h3>
+            <h3>Create a new Track</h3>
             <h5>Goal description</h5>
             <textarea
               name="description"

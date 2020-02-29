@@ -14,6 +14,11 @@ class ProjectsForm extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  // eslint-disable-next-line camelcase
+  UNSAFE_componentWillMount() {
+    document.title = 'New project';
+  }
+
   handleChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }

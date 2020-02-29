@@ -5,6 +5,11 @@ import { getGoals } from '../actions/index';
 import Goal from '../components/Goal';
 
 class GoalsList extends Component {
+  // eslint-disable-next-line camelcase
+  UNSAFE_componentWillMount() {
+    document.title = 'Daily tracks';
+  }
+
   componentDidMount() {
     const { getGoals } = this.props;
     fetch('/api/goals')
