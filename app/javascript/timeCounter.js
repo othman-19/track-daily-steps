@@ -46,7 +46,7 @@ export const GoalPerformance = (startTime, endTime) => {
     const end = new Date(endTime).getTime();
     const now = Date.now();
     let time = (now - start) / (end - start);
-    time = Math.floor(time) * 100;
+    time = Math.floor(time * 100);
     if (time > 100) {
       return 100;
     }
