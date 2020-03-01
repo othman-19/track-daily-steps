@@ -64,5 +64,11 @@ export const ProjectPerformance = (startTime, endTime) => {
   const now = Date.now();
   let time = (now - start) / (end - start);
   time = Math.floor(time * 100);
+  if (time > 100) {
+    return 100;
+  }
+  if (time < 0) {
+    return 0;
+  }
   return time;
 };

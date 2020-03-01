@@ -10,6 +10,13 @@ function Project({
     id, name, description, start, end, start_time,
   },
 }) {
+  const performance = ProjectPerformance(start, end);
+  const degree = (performance * 180) / 100;
+
+  const circleStyle = {
+    transform: `rotate(${degree}deg)`,
+  };
+
   return (
     <div className="container project ">
       <h4 className="center startTime">
@@ -49,15 +56,19 @@ function Project({
         <h5 className=" achievment track center">
           { ProjectPerformance(start, end) >= 100 ? <i className="fas fa-trophy icon-green" /> : <i className="fas fa-trophy" /> }
         </h5>
-        <div className="">
-          <div className="c100 p12 small">
-            <span>
-              { ProjectPerformance(start, end) }
-              %
-            </span>
-            <div className="slice">
-              <div className="bar" />
-              <div className="fill" />
+        <div className="clearfix">
+          <div className="circle-wrap">
+            <div className="circle">
+              <div className="mask full" style={circleStyle}>
+                <div className="fill" style={circleStyle} />
+              </div>
+              <div className="mask half">
+                <div className="fill" style={circleStyle} />
+              </div>
+              <div className="inside-circle">
+                {performance}
+                %
+              </div>
             </div>
           </div>
         </div>
