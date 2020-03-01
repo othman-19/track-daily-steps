@@ -44,9 +44,12 @@ To get a local copy up and running follow these simple example steps.
 
 6. Install bundle by typing `bundle install` and update it by typing `bundle update` in the terminal.
 
-7. Run the rails server by typing `rails server` in the terminal.
+7. Run `rails db:create` then `rails db:migrate` then `rails db:seed` to get a data base with fake data.
 
-8. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+8. Run the rails server by typing `rails server` in the terminal.
+
+9. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+10. Sign Up and create some projects and daily tracks.
 
 ## Author(s)
 
@@ -60,8 +63,6 @@ Feel free to check the [issues page](issues/).
 
 ## Credits
   UI Design to [Gregoire Vella](https://www.behance.net/gregoirevella)
-  CSS Percentage Circle to [Andre Firchow](http://firchow.net/)
-
 ## Show your support
 
 Give a ⭐️ if you like this project!
