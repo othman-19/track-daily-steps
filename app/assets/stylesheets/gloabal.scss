@@ -195,11 +195,13 @@ nav {
 
 // messages
 .alert {
-  background-color: rgb(219, 112, 112)
+  background-color: rgb(219, 112, 112);
+  margin: 1px;
 }
 
 .notice {
   background-color: rgb(107, 214, 107);
+  margin: 1px;
 }
 
 @media screen and (min-width: 375px) {
