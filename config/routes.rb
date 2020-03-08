@@ -1,3 +1,21 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  
+  as :user do
+    authenticated :user do
+      root 'pages#index', as: :authenticated_root
+    end
+    unauthenticated do
+      root 'pages#welcome', as: :unauthenticated_root
+    end
+  end
+  devise_for :users
+
+  namespace :api, defaults: { format: 'json' } do
+    resources :goals, only: [:index, :show, :create]
+    resources :projects, only: [:index, :show, :create]
+    resources :users
+  end
+  
+  
+  match '*path', to: 'pages#index', via: :all
 end

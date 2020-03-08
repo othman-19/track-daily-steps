@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TrackDailySteps</title>
+    <title>Track Daily Progress</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <%= favicon_link_tag asset_path('favicon.ico') %>
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Ubuntu&display=swap" rel="stylesheet">    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   </head>
-
   <body>
-    <%= yield %>
+  <%= render 'layouts/header' %> 
+  <%= render 'layouts/messages' %>
+  <%= yield %>
   </body>
 </html>

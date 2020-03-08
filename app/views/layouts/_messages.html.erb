@@ -1,0 +1,15 @@
+<% if notice %>
+  <p id="message" class="notice"><%= notice %></p>
+<% elsif alert %>
+  <p id="message" class="alert"><%= alert %></p>
+<% end %>
+
+<% if notice || alert %>
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+      document.getElementById('message').remove();
+      }, 5000);
+    });
+  </script>
+<% end %>

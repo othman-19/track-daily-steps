@@ -1,0 +1,16 @@
+linters:
+  rubocop:
+    display_cop_names: true
+files:
+  ignore:
+    - "bin/*"
+    - "db/*"
+    - "config/*"
+    - "Guardfile"
+    - "Rakefile"
+    - "README.md"
+    - "node_modules/**/*"
+    - "app/assets/stylesheets/circle.css"
+    - spec/rails_helper.rb
+    - app/assets/stylesheets/gloabal.scss
+    - app/assets/stylesheets/form.css

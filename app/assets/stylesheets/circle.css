@@ -1,0 +1,59 @@
+.circle-wrap {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 5px;
+  background: #e6e2e7;
+  border-radius: 50%;
+}
+
+.circle-wrap .circle .mask,
+.circle-wrap .circle .fill {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.circle-wrap .circle .mask {
+  clip: rect(0px, 125px, 125px, 50px);
+}
+
+.circle-wrap .circle .mask .fill {
+  clip: rect(0px, 50px, 125px, 0px);
+  background-color: #1c4df1;
+}
+
+.circle-wrap .circle .mask.full,
+.circle-wrap .circle .fill {
+  animation: fill ease-in-out 1s;
+  transform: rotate(0deg);
+}
+
+@keyframes fill {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.circle-wrap .inside-circle {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  background: #fff;
+  line-height: 85px;
+  text-align: center;
+  margin-top: 7.5px;
+  margin-left: 7.5px;
+  position: absolute;
+  z-index: 1;
+  font-weight: 700;
+  font-size: 1em;
+}
+@media screen and (min-width: 768px) {
+  .circle-wrap {
+    margin: 10px;
+  }
+}

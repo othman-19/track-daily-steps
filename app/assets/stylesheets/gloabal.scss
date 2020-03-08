@@ -1,0 +1,310 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
+/* mixins, variables, etc. */
+
+$blue-grey: #a1aac7;
+$blue-dark: #1d1d2c;
+$blue-light: #e1e2e7;
+$blue-light-2x: #ecedf1;
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+@mixin fixed_bottom {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* global */
+
+body {
+  font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+  background: $blue-light;
+  padding-bottom: 65px; 
+}
+
+header {
+  margin-bottom: 5%;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input, textarea {
+  @include box_sizing;
+}
+
+.center {
+  text-align: center;
+  h1 {
+    padding-bottom: 1px;
+  }
+}
+
+.right {
+  text-align: right;
+  float: right;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  font-weight: 600;
+} 
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3.5em;
+  letter-spacing: -1px;
+  text-align: center;
+}
+
+h2 {
+  letter-spacing: -1px;
+  margin-bottom: 40px;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+  padding: 0 10% 0 10%;
+}
+
+// navigation bar
+
+nav {
+  a{
+    padding: 4% 0;
+    color:$blue-grey;
+    height: 100%;
+    display: block;
+    font-size: 0.9em;
+    flex-grow: 1;
+    text-align: center;
+    align-items: center;
+    @include box_sizing();
+  }
+  a:hover {
+    background-color: $blue-grey;
+    color: $blue-dark;
+    text-decoration: none;
+    flex-grow: 1;
+  }
+  width: 100%;
+  z-index: 2;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  background-color: $blue-dark;
+  height: 8%;
+  @include box_sizing();
+  @include fixed_bottom();
+}
+
+/* logo */
+
+.logoBar {
+  background-color: $blue-grey;
+}
+
+#logo {
+  margin-top: 15px;
+  font-family: 'Bungee Inline', 'Times New Roman', Times, serif;
+  font-size: 1.5em;
+  color: $blue-dark;
+}
+
+#user {
+  padding-bottom: 4px;
+}
+
+.userName {
+  margin-right: 25%;
+  color: $blue-dark;
+}
+
+// Goal
+.goal {
+  background: $blue-light-2x;
+  margin-bottom: 5%;
+}
+
+.startTime {
+  margin-bottom: 2px;
+}
+
+.tracks {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.performance {
+  display: flex;
+}
+.achievment{
+  flex-grow: 1;
+
+}
+
+.tracktime {
+  flex-grow: 1;
+}
+
+.track {
+  margin: 2px;
+  font-size: 0.8em;
+}
+
+.fas {
+  font-size: 2em;
+}
+
+.fas:hover {
+  font-size: 2.5em;
+}
+
+.icon-green{
+  color:rgb(27, 218, 27)
+}
+
+// Project
+.project {
+  background: $blue-light-2x;
+  margin-bottom: 5%;
+}
+//copy-right
+
+.copy-right {
+  font-size: 0.8em;
+}
+
+// messages
+.alert {
+  background-color: rgb(219, 112, 112);
+  margin: 1px;
+}
+
+.notice {
+  background-color: rgb(107, 214, 107);
+  margin: 1px;
+}
+
+@media screen and (min-width: 375px) {
+  //navbar
+  nav {
+    a{
+      padding-top: 3.5% ;
+    }
+  }
+}
+
+@media screen and (min-width: 425px) {
+  // project & goal
+  .fas {
+    font-size: 2.5em;
+  }
+
+  //navbar
+  nav {
+    a{
+      padding-top: 3% ;
+      font-size: 1em;
+    }
+  }
+}
+
+@media screen and (min-width: 520px) {
+  // project & goal
+  .fas {
+    font-size: 2.8em;
+  }
+
+  .fas:hover {
+    font-size: 3em;
+  }
+  
+  .startTime {
+    font-size: 1.5em;
+  }
+  .performance {
+    font-size: 1.3em;
+  }
+
+  nav {
+    a{
+      padding-top: 1% ;
+      font-size: 1.2em;
+    }
+  }
+
+}
+
+@media screen and (min-width: 768px) {
+  // project & goal
+  .fas {
+    font-size: 3.5em;
+  }
+
+  .fas:hover {
+    font-size: 4em;
+  }
+  .startTime {
+    font-size: 1.5em;
+  }
+  .performance {
+    font-size: 1.3em;
+  }
+  nav {
+    a{
+      padding-top: 1% ;
+      font-size: 1.2em;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  nav {
+    a{
+      font-size: 1.5em;
+      padding: 1% 0 1.5% 0 ;
+      color: $blue-dark;
+    }
+
+    a:hover {
+      background-color: $blue-dark;
+      color: $blue-grey;
+      text-decoration: none;
+    }
+    position: static;
+    background-color:$blue-grey;
+    margin-bottom: 5%;
+  }
+  .logoBar {
+    margin-bottom: 1px;
+    padding-bottom: 2%;
+  }
+  #logo{
+    font-size: 2.5em;
+  }
+  .userName {
+    font-size: 1em;
+     float: left;
+    }
+  .sign-out-in{
+    float: right;
+  }
+}

@@ -1,0 +1,5 @@
+<h1> all users <h1>
+<%= link_to current_user.name, current_user %>
+<% for user in @users %>
+  <%= user.name =%> <br>
+<% end %>

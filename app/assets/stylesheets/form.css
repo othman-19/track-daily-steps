@@ -1,0 +1,58 @@
+
+input[type=text], input[type=password], input[type=email], textarea, input[type=datetime-local] {
+  background: #f1f1f1;
+  border: none;
+  display: inline-block;
+  margin: 5px 0 22px 0;
+  padding: 15px;
+  width: 100%;
+}
+
+input[type=text]:focus, input[type=password]:focus, input[type=email]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+.submitBtn {
+  background-color: rgb(21, 31, 121);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+.signUp {
+  background-color: rgb(99, 141, 231);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  text-align: center;
+}
+
+.signUp a {
+  color: rgb(5, 1, 26);
+}
+
+.submitBtn:hover,.signUp:hover {
+  opacity:1;
+}
+
+@media screen and (min-width: 1024px) {
+  .submitBtn, .signUp, input[type=text], input[type=password], input[type=email], textarea, input[type=datetime-local] {
+    width: 60%;
+  }
+  .welcome.submitBtn {
+    margin-left:20%
+  }
+}

@@ -4,12 +4,48 @@
   "dependencies": {
     "@babel/preset-react": "^7.8.3",
     "@rails/webpacker": "4.2.2",
+    "axios": "^0.19.2",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "preact": "^10.3.2",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-datepicker": "^2.13.0",
+    "react-dom": "^16.12.0",
+    "react-helmet": "^5.2.1",
+    "react-redux": "^7.2.0",
+    "react-router": "^5.1.2",
+    "react-router-dom": "^5.1.2",
+    "redux": "^4.0.5"
   },
   "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.18.3",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "stylelint": "^13.2.0",
+    "stylelint-config-recommended": "^3.0.0",
     "webpack-dev-server": "^3.10.3"
-  }
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/othman-19/track-daily-steps.git"
+  },
+  "author": "othmane <othman-19@hotmail.fr>",
+  "license": "MIT",
+  "description": "The Track daily steps project is the final capstone project. It is a mobile web app that tracks the daily projects tasks of the user. It's a real-world-like project, built with business specifications that will get feedback about the achievement of technical and soft skills gained.",
+  "bugs": {
+    "url": "https://github.com/othman-19/track-daily-steps/issues"
+  },
+  "homepage": "https://github.com/othman-19/track-daily-steps#readme",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": []
 }
