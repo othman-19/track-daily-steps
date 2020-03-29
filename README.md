@@ -28,7 +28,7 @@ Track Daily Steps is a web app that tracks daily projects and tasks for a given 
 - Application that have phone, tablet, and desktop versions.
 - A Secured application which have a user authentication.
 - User is able to create new projects and its daily steps.
-- User have the access to a list of things with measurements and check the progress of it within time.
+- User have the access to his list of projects and tracks and check the progress of it within time.
 - User's progress presented with a persentage circles, that permit to see progress and achievments easily.
 
 To get a local copy up and running follow these simple example steps.
@@ -61,8 +61,13 @@ To get a local copy up and running follow these simple example steps.
 10. Sign Up and create some projects and daily tracks.
 
 ## Author(s)
-
-1. [Othamane Naamani](https://github.com/othman-19/).
+[Othmane Namani](https://github.com/othman-19/).
+[Email: ](mailto:othmanenaamani@gmail.com).
+[Portfilio: ](https://othman-19.github.io/my_portfolio/).
+[LinkedIn: ](https://www.linkedin.com/in/othman-namani/).
+[twitter: ](https://twitter.com/ONaamani).
+[DEV Community: ](https://dev.to/othman).
+[Angel List: ](https://angel.co/othmane-namani).
 
 ## 🤝 Contributing
 
