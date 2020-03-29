@@ -61,6 +61,8 @@ To get a local copy up and running follow these simple example steps.
 10. Sign Up and create some projects and daily tracks.
 
 ## Author(s)
+[6.2]: http://i.imgur.com/9I6NRUm.png (github icon without padding)
+
 [Othmane Namani](https://github.com/othman-19/).  
 [Email: othmanenaamani@gmail.com](mailto:othmanenaamani@gmail.com).  
 [Portfilio](https://othman-19.github.io/my_portfolio/).  
