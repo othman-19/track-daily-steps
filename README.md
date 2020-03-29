@@ -1,5 +1,5 @@
 # PROJECT: Track daily steps
-The Track daily steps project is the final capstone project. It is a mobile web app that tracks the daily projects tasks of the user. It's a real-world-like project, built with business specifications that will get feedback about the achievement of technical and soft skills gained.
+Track Daily Steps is a web app that tracks daily projects and tasks for a given user. The project was built to comply with business specifications in order to obtain feedback on technical achievements and soft skills gained.
 
 ![screenshot](./Screenshot.png)
 
@@ -10,17 +10,26 @@ The Track daily steps project is the final capstone project. It is a mobile web 
 [Live Demo Link](https://track-daily-steps.herokuapp.com/) .
 
 ## Built With
-- Ruby On Rails
-- Ruby gems
-- React
-- Npm
-- Yarn
-- Html
-- CSS
-- ES6
+- Ruby On Rails.
+- Ruby gems.
+- React.
+- Redux.
+- Npm.
+- Yarn.
+- Html.
+- CSS.
+- ES6.
 
 ## Test With
 - Rspec
+
+## Features:
+- An interactive application that respond to user interactions.
+- Application that have phone, tablet, and desktop versions.
+- A Secured application which have a user authentication.
+- User is able to create new projects and its daily steps.
+- User have the access to a list of things with measurements and check the progress of it within time.
+- User's progress presented with a persentage circles, that permit to see progress and achievments easily.
 
 To get a local copy up and running follow these simple example steps.
 
@@ -62,7 +71,7 @@ Contributions, issues and feature requests are welcome!
 Feel free to check the [issues page](issues/).
 
 ## Credits
-  UI Design to [Gregoire Vella](https://www.behance.net/gregoirevella)
+  UI Design by [Gregoire Vella](https://www.behance.net/gregoirevella)
 ## Show your support
 
 Give a ⭐️ if you like this project!
