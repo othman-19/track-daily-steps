@@ -1,5 +1,8 @@
-# PROJECT: Track daily steps
-Track Daily Steps is a web app that tracks daily projects and tasks for a given user. The project was built to comply with business specifications in order to obtain feedback on technical achievements and soft skills gained.
+# PROJECT: TRACK DAILY STEPS
+
+Track Daily Steps is a web app that tracks daily projects and tasks for a given user.
+
+The project was built to comply with business specifications in order to obtain feedback on technical achievements and soft skills gained.
 
 ![screenshot](./Screenshot.png)
 
@@ -21,15 +24,24 @@ Track Daily Steps is a web app that tracks daily projects and tasks for a given 
 - ES6.
 
 ## Test With
+
 - Rspec
 
 ## Features:
+
 - An interactive application that respond to user interactions.
 - Application that have phone, tablet, and desktop versions.
 - A Secured application which have a user authentication.
 - User is able to create new projects and its daily steps.
 - User have the access to his list of projects and tracks and check the progress of it within time.
 - User's progress presented with a persentage circles, that permit to see progress and achievments easily.
+
+## Future Features:
+
+- Present different mesurments with charts.
+- Add user profile.
+- Add front-end user authentication.
+- Add sounds, music and stopwatch.
 
 To get a local copy up and running follow these simple example steps.
 
