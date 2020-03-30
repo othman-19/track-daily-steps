@@ -75,7 +75,7 @@ To get a local copy up and running follow these simple example steps.
 ## Author(s)
 [Othmane Namani](https://github.com/othman-19/).  
 [Email: othmanenaamani@gmail.com](mailto:othmanenaamani@gmail.com).  
-[Portfilio](https://othman-19.github.io/my_portfolio/).  
+[Portfolio](https://othman-19.github.io/my_portfolio/).  
 [LinkedIn](https://www.linkedin.com/in/othman-namani/).  
 [twitter](https://twitter.com/ONaamani).  
 [DEV Community](https://dev.to/othman).  
